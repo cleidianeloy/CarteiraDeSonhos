@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_destroy(); //destroi tudo que tinha na sessão recomeça de novo quando a pagina é acessada
  ?>
 
 <!DOCTYPE html>
@@ -27,7 +26,6 @@ session_destroy(); //destroi tudo que tinha na sessão recomeça de novo quando 
 		</fieldset>
 	</form>
 <?php
-session_start();
 
 require_once "criar-classe-banco-de-dados.inc.php";
 require_once "classe-usuario.inc.php";
