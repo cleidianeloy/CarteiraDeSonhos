@@ -18,7 +18,7 @@ session_start();
 			<label>Senha:</label>
 			<input type="password" name="senha"><br><br>
 
-			<a href="paginaUsuario.php"><button type="submit" name="login">Login</button></a><br><br>
+			<button type="submit" name="login">Login</button><br><br>
 
 			<a  href="cadastrar.php">Clique aqui caso não tenha cadastro</a></li> 
 

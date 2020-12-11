@@ -35,6 +35,7 @@ class Usuario
 			{
 
 				exit("<p>algo deu errado</p>");
+				session_destroy();
 			}
 	}
 	function nome($conexao, $nomeDaTabela1, $email){
@@ -43,7 +44,7 @@ class Usuario
 		if($conexao->affected_rows == 0)
 		{
 
-				exit("<p>usuario não encontrado</p>");
+				return false;
 		}else
 		{
 				//usuario foi encontrado
