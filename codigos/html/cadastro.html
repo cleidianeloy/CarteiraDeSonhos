@@ -1,14 +1,46 @@
-(espaço para logo) conheça Contato Login/Cadastra-se
-email (input-email)
-senha (input-password)
-login (input- submit)
-Clique aqui caso não tenha cadastro
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<title>Cadastro</title>
+	<link rel="stylesheet" type="text/css" href="../css/">
+</head>
+<body>
+	<img src="../../midias/imagem/logo.png" alt="logo">
+	<a href="">Conheça</a>
+	<a href="">Contato</a>
+	<a href="">Login/Cadastra-se</a>
+	<div id="login">
+		<form action="../php/cadastroLogin.php" method="post">
+			<label>Email:</label>
+			<input type="email" name="email">
+			<label>Senha:</label>
+			<input type="password" name="senha">
+			<button type="submit" name="login" >Login</button>
+		</form>
+		<a href="cadastro.html">	Clique aqui caso não tenha cadastro</a>
+		<a href="esqueciSenha.html">	Esqueci minha senha</a>
+	</div>
+	<img src="../../midias/imagem/16.png" alt="menina subindo a escada">
+	<h1>Cadastro</h1>
+	<form method="post" action="../php/cadastrar.php">
 
-(espaço para imagem)
+		<label>Nome:</label>
+		<input type="text" name="nome">
+		<label>Email:</label>
+		<input type="email" name="email">
+		<label>Senha:</label>
+		<input type="password" name="senha">
+		<label>Confirmação de Senha:</label>
+		<input type="password" name="senhaConfirmação">
+	<button type="submit" name="cadastrar-usuario">Cadastrar</button>
+	</form>
+	<div>
+		CONTATO
+		Email   email@email.com
+		Telefone (00) 0000-0000
+		<img src="" alt="icone-instagram">
+		<img src="" alt="icone-facebook">
+	</div>
+</body>
+</html>
 
-Cadastro 
-Nome (input-text)
-Email (input- submit)
-Senha (input-password)
-Confirmação de senha(input-password)
-(botao - submit)
