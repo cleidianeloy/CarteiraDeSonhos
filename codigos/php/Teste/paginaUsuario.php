@@ -12,7 +12,7 @@ $usuario  = new Usuario();
 	
 if($_SESSION['email']){//se sessão (preenchida no cadastroLogin) não estiver vazia faça:
 	$email =  $_SESSION['email'];//pegando o email guardado em cadastroLogin
-    $nome = $usuario->nome($conexao, $banco->nomeDaTabela1, $email);//pegando o nome do usuario pelo email
+    $nome = $usuario->retornaNome($conexao, $banco->nomeDaTabela1, $email);//pegando o nome do usuario pelo email
     if($nome == false){
 		header("Location: cadastroLogin.php"); //se o nome não existir ele volta pra pagina de login
     }else

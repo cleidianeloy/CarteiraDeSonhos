@@ -38,8 +38,40 @@ class Usuario
 				session_destroy();
 			}
 	}
-	function nome($conexao, $nomeDaTabela1, $email){
+	function retornaNome($conexao, $nomeDaTabela1, $email){
 		$sql ="SELECT nome from $nomeDaTabela1 WHERE email = '$email'";
+		$resultado = $conexao->query($sql) or exit($conexao->error);
+		if($conexao->affected_rows == 0)
+		{
+
+				return false;
+		}else
+		{
+				//usuario foi encontrado
+				$registro = $resultado->fetch_array();
+				$nome = $registro[0];
+				$nome = htmlentities($nome, ENT_QUOTES,"UTF-8");
+				return $nome;
+		}
+	}
+	function retornaEmail($conexao, $nomeDaTabela1, $email){
+		$sql ="SELECT email from $nomeDaTabela1 WHERE email = '$email'";
+		$resultado = $conexao->query($sql) or exit($conexao->error);
+		if($conexao->affected_rows == 0)
+		{
+
+				return false;
+		}else
+		{
+				//usuario foi encontrado
+				$registro = $resultado->fetch_array();
+				$nome = $registro[0];
+				$nome = htmlentities($nome, ENT_QUOTES,"UTF-8");
+				return $nome;
+		}
+	}
+	function retornaSenha($conexao, $nomeDaTabela1, $email){
+		$sql ="SELECT senha from $nomeDaTabela1 WHERE email = '$email'";
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 		if($conexao->affected_rows == 0)
 		{
