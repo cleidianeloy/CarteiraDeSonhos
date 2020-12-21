@@ -22,6 +22,7 @@ if($_SESSION['email']){//se sessão (preenchida no cadastroLogin) não estiver v
 	
 ?>
 <form method= "post" action="paginaUsuario">
+	<a href="atualizaCadastro">Atualizar cadastro</a><br>
 	<button type="submit" name="sair">sair</button>
 </form>
 

@@ -39,7 +39,7 @@ class Usuario
 			}
 	}
 	function retornaNome($conexao, $nomeDaTabela1, $email){
-		$sql ="SELECT nome from $nomeDaTabela1 WHERE email = '$email'";
+		$sql = "SELECT nome from $nomeDaTabela1 WHERE email = '$email'";
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 		if($conexao->affected_rows == 0)
 		{
@@ -86,6 +86,33 @@ class Usuario
 				return $nome;
 		}
 
+	}
+
+	function atualizaNome($conexao, $nomeDaTabela1, $email){
+		$novoNome = trim($conexao->escape_string($_POST["novoNome"]));
+		$sql="UPDATE $nomeDaTabela1 SET nome = '$novoNome' WHERE email ='$email'";
+		$resultado = $conexao->query($sql) or exit($conexao->error);
+		if ($conexao->query($sql)) {
+    		exit("Atualizado com sucesso!");
+		}
+
+	}
+	function atualizaEmail($conexao, $nomeDaTabela1, $email){
+		$novoEmail = trim($conexao->escape_string($_POST["novoEmail"]));
+		$sql="UPDATE $nomeDaTabela1 SET email = '$email' WHERE email ='$email'";
+		$resultado = $conexao->query($sql) or exit($conexao->error);
+		if ($conexao->query($sql)) {
+    		exit("Atualizado com sucesso!");
+		}
+
+	}
+	function atualizaSenha($conexao, $nomeDaTabela1, $email){
+		$novaSenha = trim($conexao->escape_string($_POST["novaSenha"]));
+		$sql="UPDATE $nomeDaTabela1 SET senha = '$novaSenha' WHERE email ='$email'";
+		$resultado = $conexao->query($sql) or exit($conexao->error);
+		if ($conexao->query($sql)) {
+    		exit("Atualizado com sucesso!");
+		}
 	}
 
 }
