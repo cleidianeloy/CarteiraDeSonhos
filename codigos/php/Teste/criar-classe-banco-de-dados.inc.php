@@ -9,7 +9,7 @@ class BancoDeDados
 
 
 # 2° CONSTRUTOR DA CLASSE. 
-#OBS: CONFIRMAR SEMPRE A QTD DOS PARAMENTROS.
+#OBS: CONFIRMAR SEMPRE A QTD DOS PARAMETROS.
 	function __construct( $servidorBanco, $usuarioBanco, $senhaAcesso, $nomeBanco, $nomeDaTabela1 )
 	{
 		$this->servidor 	= $servidorBanco;
