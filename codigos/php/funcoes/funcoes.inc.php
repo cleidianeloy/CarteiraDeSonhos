@@ -1,6 +1,7 @@
 <?php
 require_once (__DIR__.'/../banco/criar-classe-banco-de-dados.inc.php');
 require_once (__DIR__.'/../banco/classe-usuario.inc.php');
+require_once(__DIR__.'/../banco/classe-metas.inc.php');
 
 function login(){
 
@@ -46,7 +47,7 @@ $banco->criarTabelas($conexao);
 
 $usuario  = new Usuario();
 		$usuario->receberDadosFormulario($conexao);
-		$usuario->cadastrar($conexao, $banco->nomeDaTabela1 );
+		$usuario->cadastrar($conexao, $banco->nomeDaTabela1);
 		echo"<p> Dados do usuario cadastrado com sucesso no banco de dados.</p>";
 	$banco->desconectar($conexao);
 }
@@ -98,11 +99,27 @@ function testeUsuario($email){
     	}else
     	{
     		return true;
-   		 
    		}
     }
-	
+
 	
 }
+function cadastrarMeta($usuario){
+	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
+    $conexao = $banco->criarConexao();
+    $banco->criarBanco($conexao);
+	$banco->abrirBanco($conexao);
+	$banco->definirCharset($conexao);
+	$banco->criarTabelas($conexao);
+
+	$meta  = new Metas();
+		$meta->receberDadosFormulario($conexao,$usuario);
+		$meta->cadastrar($conexao, $banco->nomeDaTabela2);
+		echo"<p> Dados cadastrado com sucesso no banco de dados.</p>";
+	$banco->desconectar($conexao);
+}
+
+
+
 
 ?>
