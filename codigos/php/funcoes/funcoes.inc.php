@@ -19,9 +19,7 @@ $banco->criarTabelas($conexao);
 
 $usuario  = new Usuario();
 	session_start();
-		$email = $_POST["email"]; //recebe email do formulario
-	    $senha = $_POST["senha"]; // recebe senha do formulario
-		$teste = $usuario->login($conexao, $banco->nomeDaTabela1, $email, $senha); //verifica se login é permitido
+		$teste = $usuario->login($conexao, $banco->nomeDaTabela1); //verifica se login é permitido
 		if($teste){
 			$_SESSION["email"] = $email; 
 			header("Location: paginaUsuario.php");
@@ -52,46 +50,47 @@ $usuario  = new Usuario();
 	$banco->desconectar($conexao);
 }
 
-function nome($email){
+function nome(){
 	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
 	$conexao = $banco->criarConexao();
 	$banco->abrirBanco($conexao);
 	$banco->definirCharset($conexao);
 	$usuario  = new Usuario();
 
-	$nome = $usuario->retornaNome($conexao, $banco->nomeDaTabela1, $email);
+	$nome = $usuario->retornaNome($conexao, $banco->nomeDaTabela1);
 	return $nome;
 }
-function email($email){
+function email(){
 	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
 	$conexao = $banco->criarConexao();
 	$banco->abrirBanco($conexao);
 	$banco->definirCharset($conexao);
 	$usuario  = new Usuario();
 
-	$email = $usuario->retornaEmail($conexao, $banco->nomeDaTabela1, $email);
+	$email = $usuario->retornaEmail($conexao, $banco->nomeDaTabela1);
 	return $email;
 }
-function senha($email){
+function senha(){
 	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
 	$conexao = $banco->criarConexao();
 	$banco->abrirBanco($conexao);
 	$banco->definirCharset($conexao);
 	$usuario  = new Usuario();
 
-	$senha = $usuario->retornaSenha($conexao, $banco->nomeDaTabela1, $email);
+	$senha = $usuario->retornaSenha($conexao, $banco->nomeDaTabela1);
 	return $senha;
 }
-function testeUsuario($email){
+function testeUsuario(){
 	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
 	$conexao = $banco->criarConexao();
 	$banco->abrirBanco($conexao);
 	$banco->definirCharset($conexao);
 	$usuario  = new Usuario();
+	$email = email();
 	
 	if($email){//se sessão (preenchida no cadastroLogin) não estiver vazia faça:
 		//$email =  $email;//pegando o email guardado em cadastroLogin
-    	$nome = $usuario->retornaNome($conexao, $banco->nomeDaTabela1, $email);//pegando o nome do usuario pelo email
+    	$nome = $usuario->retornaNome($conexao, $banco->nomeDaTabela1);//pegando o nome do usuario pelo email
     	
     	if($nome == false){
 		//header("Location: home.php"); //se o nome não existir ele volta pra pagina de login
@@ -104,7 +103,7 @@ function testeUsuario($email){
 
 	
 }
-function cadastrarMeta($usuario){
+function cadastrarMeta(){
 	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
     $conexao = $banco->criarConexao();
     $banco->criarBanco($conexao);
@@ -113,9 +112,9 @@ function cadastrarMeta($usuario){
 	$banco->criarTabelas($conexao);
 
 	$meta  = new Metas();
-		$meta->receberDadosFormulario($conexao,$usuario);
+		$meta->receberDadosFormulario($conexao);
 		$meta->cadastrar($conexao, $banco->nomeDaTabela2);
-		echo"<p> Dados cadastrado com sucesso no banco de dados.</p>";
+		echo("<p> Dados cadastrado com sucesso no banco de dados.</p>");
 	$banco->desconectar($conexao);
 }
 

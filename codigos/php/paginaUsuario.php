@@ -1,9 +1,9 @@
 <?php
 	session_start();
-	$email = $_SESSION["email"];
 	require_once "funcoes/funcoes.inc.php"; 
-	testeUsuario($email);
-	$nome = nome($email);
+	testeUsuario();
+	$nome = nome();
+	$email = email();
  ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,8 +26,8 @@
 			 </div>
 		</header>
 
-		<section id="login" class="container">
-			<div>
+<!-- <section id="login" class="container">
+		<div>
 				<form action="paginaUsuario.php" method="post">
 					<label>Email:</label>
 					<input type="email" name="email"><br>
@@ -38,8 +38,9 @@
 				</form>
 				<a href="cadastro.html">Clique aqui caso não tenha cadastro</a><br>
 				<a href="esqueciSenha.html">	Esqueci minha senha</a>
-			</div>
-		</section>	
+			</div> 
+
+	 </section> 	-->
 		
 		<section class="id">
 			<div> 
@@ -57,6 +58,25 @@
 							
 					<h2> Nova meta + </h2> 
 
+			</div>
+			<div>
+				<form method="post" action="paginaUsuario.php">
+					<label>Nome:</label>
+					<input type="text" name="nome-meta" required ><br>
+
+					<label>Objetivo guardado:</label>
+					<input type="number" name="valor-meta" min="0"  step="0.01" required ><br>
+
+					<button type="submit" name="cadastrar-meta">Salvar Meta</button>
+				</form>
+				<?php
+						if(isset($_POST["cadastrar-meta"])){
+							//$nomeMeta = $_POST["nome-meta"];
+							//$valor= $_POST["valor-meta"];
+							cadastrarMeta();
+							} 
+				?>
+				 
 			</div>
 		</section>	
 		

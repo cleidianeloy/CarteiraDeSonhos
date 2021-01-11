@@ -8,15 +8,15 @@ class Metas
 
 	
 
-	function receberDadosFormulario($conexao, $usuario)
+	function receberDadosFormulario($conexao)
 	{
 		$nome 	= trim($conexao->escape_string($_POST["nome-meta"]));
 		$valor 	= trim($conexao->escape_string($_POST["valor-meta"]));
-		//$usuario = trim($conexao ->escape_string($_POST["email-usuario"]));
+		$usuario = trim($conexao ->escape_string($_SESSION["email"]));
 
-		$this->nomeMeta	 = $nome;
-		$this->usuario = $usuario;
-		$this->valor 	 = $valor;
+		$this->nomeMeta	= $nome;
+		$this->usuario  = $usuario;
+		$this->valor 	= $valor;
 
 	}
 
@@ -30,7 +30,11 @@ class Metas
 
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 	}
-
+	function apagarMeta($conexao, $nomeDaTabela2, $nomeMeta){
+		$usuario = trim($conexao ->escape_string($_SESSION["email"]));
+		$sql = "DELETE FROM $nomeDaTabela2 WHERE usuario = $usuario and nomeMeta = $nomeMeta";
+		$resultado = $conexao->query($sql) or exit($conexao->error);
+	}
 
 }
 

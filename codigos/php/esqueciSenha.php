@@ -19,6 +19,10 @@
 			<input type="password" name="password" required="">
 			<button>Login</button>
 		</form>
+		<?php
+			if(isset($_POST["login"])){
+				 login();
+			}?>
 		<a href="cadastro.html">	Clique aqui caso não tenha cadastro</a>
 		<a href="esqueciSenha.html">	Esqueci minha senha</a>
 
