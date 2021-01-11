@@ -30,9 +30,7 @@ class Metas
 
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 	}
-	function retornaTamanho($conexao){
-		
-	}
+
 
 }
 
