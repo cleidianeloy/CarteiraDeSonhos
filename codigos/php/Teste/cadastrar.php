@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +27,7 @@
 <?php
 require_once "criar-classe-banco-de-dados.inc.php";
 require_once "classe-usuario.inc.php";
-//require_once "criar-classe-metas.inc.php";
+
 
 $banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
 
@@ -41,7 +42,7 @@ $banco->definirCharset($conexao);
 $banco->criarTabelas($conexao);
 
 $usuario   = new Usuario();
-//$meta = new Meta();
+
 
 if(isset($_POST["cadastrar-usuario"]))
 {
@@ -50,6 +51,15 @@ if(isset($_POST["cadastrar-usuario"]))
 	echo"<p> Dados do usuario cadastrado com sucesso no banco de dados.</p>";
 }
 $banco->desconectar($conexao);
+
+/*tudo isso pode ser substituido por 
+require_once "funcoes.inc.php"; 
+if(isset($_POST["cadastrar-usuario"]))
+{
+	cadastrar();
+}
+//porque está usando o arquivo de funções onde já esta escrito tudo isso 
+*/
 ?>
 
 </body>

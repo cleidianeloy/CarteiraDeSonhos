@@ -3,12 +3,16 @@
 session_start();//sessão rodando
 require_once "criar-classe-banco-de-dados.inc.php";
 require_once "classe-usuario.inc.php";
+require_once "classe-metas.inc.php";
+require_once "funcoes.inc.php";
+
 
 $banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
 $conexao = $banco->criarConexao();
 $banco->abrirBanco($conexao);
 $banco->definirCharset($conexao);
 $usuario  = new Usuario();
+$meta = new Metas();
 	
 if($_SESSION['email']){//se sessão (preenchida no cadastroLogin) não estiver vazia faça:
 	$email =  $_SESSION['email'];//pegando o email guardado em cadastroLogin
@@ -17,12 +21,15 @@ if($_SESSION['email']){//se sessão (preenchida no cadastroLogin) não estiver v
 		header("Location: cadastroLogin.php"); //se o nome não existir ele volta pra pagina de login
     }else
     {
-    	echo ("<h1>Bem vindo, $nome</h1>"); //se existir funciona normalmente
+    	echo ("<h1>Bem vindo, $nome</h1>"); //se existir funciona normalmente.
     }
 	
 ?>
 <form method= "post" action="paginaUsuario">
-	<a href="atualizaCadastro">Atualizar cadastro</a><br>
+	<a href="atualizaCadastro.php">Atualizar cadastro</a><br>
+	<a href="cadastroMetas.php">CadastrarMeta</a><br><br>
+
+	<button type="submit" name="mostrar-metas">Mostrar Metas</button><br><br>
 	<button type="submit" name="sair">sair</button>
 </form>
 
@@ -35,6 +42,13 @@ if(isset($_POST["sair"])){ //se o botão sair for clicado ele:
 	session_destroy(); //destroi a sessão
 	header("Location: cadastroLogin.php"); //vai pra pagina de login
 }
+if(isset($_POST["mostrar-metas"]))
+		{
+
+			//mostrarMetasTabela();
+			$meta->mostrarMetas($conexao, $banco->nomeDaTabela2 );
+		}
+
 
 
 
