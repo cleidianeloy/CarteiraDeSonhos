@@ -1,6 +1,7 @@
 h1,
 h2,
 h3,
+h4,
 p,
 a {
      font-family: Segoe UI;
@@ -83,6 +84,26 @@ body {
 .texto-grafico {
     width: 300px;
 }
+.btn-cadastre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+    margin-bottom: 65px;
+}
+.btn-cadastre > a {
+    background: #F1FE63 0% 0% no-repeat padding-box;
+    border-radius: 50px;
+    width: 272px;
+    height: 67px;
+    color: #03B6CF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    text-decoration: unset !important;
+    font-weight: bold;
+}
 .footer {
     background: #03B6CF9E 0% 0% no-repeat padding-box;
     height: 526px;
@@ -97,4 +118,108 @@ body {
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    margin-top: 89px;
+}
+.footer > .container > h1 {
+    font-weight: bold;
+    font-size: 35px;
+}
+.contato > div > p {
+    font-size: 35px;
+    display: flex;
+    margin-bottom: 85px;
+}
+.contato > div > p > span {
+    font-weight: bold;
+    width: 162px;
+}
+/*CSS CADASTRO*/
+.formulario {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background: #03B6CF;
+}
+.formulario .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.formulario > .form > form {
+    display: flex;
+    flex-direction: column;
+}
+.formulario > .form > form > label{
+    display: flex;
+    font-size: 25px;
+    color: #fff;
+    margin-bottom: 25px;
+}
+.formulario > .form > form > label > span {
+    max-width: 147px !important;
+    width: 100%;
+}
+.form > h1 {
+    font-size: 35px;
+}
+.formulario > .form > form > label > input {
+    width: 290px;
+    border: unset;
+}
+.formulario > .form > form > span {
+    display: flex;
+    justify-content: center;
+}
+.formulario > .form > form > span > button {
+    background: #EDFD3E 0% 0% no-repeat padding-box;
+    border-radius: 51px;
+    border: unset;
+    font-size: 35px;
+    padding: 15px 19px 14px 18px;
+}
+/*CSS ESQUECI A SENHA*/
+.esqueci {
+    display: flex;
+    justify-content: center;
+    background-color: #03B6CF;
+}
+.esqueci > div > h1 {
+    font-size: 35px;
+}
+.esqueci > div > h4 {
+    max-width: 347px;
+}
+.esqueci > div > h4 {
+    max-width: 347px;
+    font-weight: normal;
+    font-size: 25px;
+}
+.esqueci > .form {
+    display: flex;
+    flex-direction: column;
+}
+.esqueci > .form > label {
+    font-size: 25px;
+    color: #fff;
+    display: flex;
+}
+.esqueci > .form > label > span {
+    margin-right: 26px;
+}
+.esqueci > .form > label > input {
+    max-width: 346px;
+    min-width: 100%;
+}
+.esqueci  > .form > span {
+    display: flex;
+    justify-content: center;
+}
+
+.esqueci > .form > span > button {
+    background: #EDFD3E 0% 0% no-repeat padding-box;
+    border-radius: 51px;
+    border: unset;
+    font-size: 35px;
+    padding: 15px 19px 14px 18px;
 }
