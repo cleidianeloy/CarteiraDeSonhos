@@ -2,10 +2,10 @@
 require_once (__DIR__.'/../banco/criar-classe-banco-de-dados.inc.php');
 require_once (__DIR__.'/../banco/classe-usuario.inc.php');
 require_once(__DIR__.'/../banco/classe-metas.inc.php');
-
+require_once(__DIR__.'/../banco/classe-historico.inc.php');
 function login(){
 
-$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
+$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
 
 $conexao = $banco->criarConexao();
 
@@ -21,6 +21,7 @@ $usuario  = new Usuario();
 	session_start();
 		$teste = $usuario->login($conexao, $banco->nomeDaTabela1); //verifica se login é permitido
 		if($teste){
+			$email = $_POST["email"];
 			$_SESSION["email"] = $email; 
 			header("Location: paginaUsuario.php");
 		}else
@@ -31,7 +32,7 @@ $usuario  = new Usuario();
 }
 function cadastrar(){
 
-$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
+$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
 
 $conexao = $banco->criarConexao();
 
@@ -51,7 +52,7 @@ $usuario  = new Usuario();
 }
 
 function nome(){
-	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
+	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
 	$conexao = $banco->criarConexao();
 	$banco->abrirBanco($conexao);
 	$banco->definirCharset($conexao);
@@ -61,7 +62,7 @@ function nome(){
 	return $nome;
 }
 function email(){
-	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
+	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
 	$conexao = $banco->criarConexao();
 	$banco->abrirBanco($conexao);
 	$banco->definirCharset($conexao);
@@ -71,7 +72,7 @@ function email(){
 	return $email;
 }
 function senha(){
-	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
+	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
 	$conexao = $banco->criarConexao();
 	$banco->abrirBanco($conexao);
 	$banco->definirCharset($conexao);
@@ -81,7 +82,7 @@ function senha(){
 	return $senha;
 }
 function testeUsuario(){
-	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
+	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
 	$conexao = $banco->criarConexao();
 	$banco->abrirBanco($conexao);
 	$banco->definirCharset($conexao);
@@ -104,7 +105,7 @@ function testeUsuario(){
 	
 }
 function cadastrarMeta(){
-	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas");
+	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
     $conexao = $banco->criarConexao();
     $banco->criarBanco($conexao);
 	$banco->abrirBanco($conexao);
@@ -116,6 +117,39 @@ function cadastrarMeta(){
 		$meta->cadastrar($conexao, $banco->nomeDaTabela2);
 		echo("<p> Dados cadastrado com sucesso no banco de dados.</p>");
 	$banco->desconectar($conexao);
+}
+function mostraMetas(){
+		$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
+    $conexao = $banco->criarConexao();
+    $banco->criarBanco($conexao);
+	$banco->abrirBanco($conexao);
+	$banco->definirCharset($conexao);
+
+	$meta  = new Metas();
+	$historico = new Historico();
+	$meta->mostrarMetas($conexao, $banco->nomeDaTabela2);
+}
+function atualizaMeta(){
+	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
+    $conexao = $banco->criarConexao();
+    $banco->criarBanco($conexao);
+	$banco->abrirBanco($conexao);
+	$banco->definirCharset($conexao);
+
+	$meta = new Metas();
+
+	$meta->atualizaValor($conexao, $banco->nomeDaTabela2);
+}
+function mostrarHistorico(){
+	
+	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
+    $conexao = $banco->criarConexao();
+    $banco->criarBanco($conexao);
+	$banco->abrirBanco($conexao);
+	$banco->definirCharset($conexao);
+	$historico = new Historico();
+
+	$historico->mostrar($conexao);
 }
 
 
