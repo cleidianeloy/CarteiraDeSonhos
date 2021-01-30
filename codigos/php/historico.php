@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once "funcoes/funcoes.inc.php"; 
+ ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -22,12 +26,7 @@
 		<section class="historico">
 			<div> 
 
-					<h2>Histórico da meta 1 </h2> 
-					<p>Valor.  Data 06/06/2020</p>
-					<p>Valor.  Data 06/06/2020</p>
-					<p>Valor.  Data 06/06/2020</p>
-					<p>Valor.  Data 06/06/2020</p>
-					<p>Valor.  Data 06/06/2020</p>
+				 <?php mostrarHistorico(); ?>
 					
 
 			</div>
