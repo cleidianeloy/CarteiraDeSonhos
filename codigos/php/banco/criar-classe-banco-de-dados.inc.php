@@ -7,11 +7,12 @@ class BancoDeDados
 	public $nomeDoBanco;
 	public $nomeDaTabela1;
 	public $nomeDaTabela2;
+	public $nomeDaTabela3;
 
 
 # 2° CONSTRUTOR DA CLASSE. 
 #OBS: CONFIRMAR SEMPRE A QTD DOS PARAMETROS.
-	function __construct( $servidorBanco, $usuarioBanco, $senhaAcesso, $nomeBanco, $nomeDaTabela1, $nomeDaTabela2)
+	function __construct( $servidorBanco, $usuarioBanco, $senhaAcesso, $nomeBanco, $nomeDaTabela1, $nomeDaTabela2, $nomeDaTabela3)
 	{
 		$this->servidor 	= $servidorBanco;
 		$this->usuario		= $usuarioBanco;
@@ -19,6 +20,8 @@ class BancoDeDados
 		$this->nomeDoBanco	= $nomeBanco;
 		$this->nomeDaTabela1 = $nomeDaTabela1;
 		$this->nomeDaTabela2 = $nomeDaTabela2;
+		$this->nomeDaTabela3 = $nomeDaTabela3;
+		
 	}
 # 3° CRIAR O MÉTODO QUE ESTABELECE  A LIGAÇÃO ENTRE O NOSSO CÓDIGO PHP E O MYSQL.
 	function criarConexao()
@@ -53,18 +56,27 @@ class BancoDeDados
 			    senha VARCHAR(8)) ENGINE=innoDB";
 
 		$resultado = $conexao->query($sql) or exit($conexao->error);
-
+		
 		$sql = "CREATE TABLE IF NOT EXISTS $this->nomeDaTabela2(
 				nomeMeta VARCHAR(300) PRIMARY KEY,
-				usuario VARCHAR(70), #email do usuario
-				valor DECIMAL(7,2),
+				email VARCHAR(70),
+				valorTotal DECIMAL(15,2),
+				valorAtual DECIMAL(15,2),
 
-				FOREIGN KEY (usuario) REFERENCES 
+				FOREIGN KEY (email) REFERENCES 
 				$this->nomeDaTabela1 (email)) ENGINE=innoDB";
+		$resultado = $conexao->query($sql) or exit($conexao->error);
+		//colocar um id como primary key 
+		$sql = "CREATE TABLE IF NOT EXISTS $this->nomeDaTabela3(
+				id    INT PRIMARY KEY AUTO_INCREMENT,
+				nomeMeta VARCHAR(300),
+				data DATE,
+				valor DECIMAL(15,2),
 
+				FOREIGN KEY (nomeMeta) REFERENCES 
+				$this->nomeDaTabela2 (nomeMeta)) ENGINE=innoDB";
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 	}
-
 # MÉTODO P/ FINALIZAR A CONEXÃO.
 	function desconectar($conexao)
 	{

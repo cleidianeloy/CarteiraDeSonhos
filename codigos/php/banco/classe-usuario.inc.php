@@ -27,8 +27,10 @@ class Usuario
 
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 	}
-	function login($conexao, $nomeDaTabela1,$email,$senha)
+	function login($conexao, $nomeDaTabela1)
 	{
+		$email 	= trim($conexao->escape_string($_POST["email"]));
+		$senha 	= trim($conexao->escape_string($_POST["senha"]));
 		$sql ="SELECT email from $nomeDaTabela1 WHERE email = '$email' AND senha='$senha'";
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 		if($conexao->affected_rows == 0)
