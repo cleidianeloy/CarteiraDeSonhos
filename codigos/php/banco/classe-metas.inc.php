@@ -32,9 +32,10 @@ class Metas
 
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 	}
-	function apagarMeta($conexao, $nomeDaTabela2, $nomeMeta){
+	function apagarMeta($conexao, $nomeDaTabela2){
+		$nomeMeta = trim($conexao->escape_string($_GET['apagar']));
 		$usuario = trim($conexao ->escape_string($_SESSION["email"]));
-		$sql = "DELETE FROM $nomeDaTabela2 WHERE usuario = $usuario and nomeMeta = $nomeMeta";
+		$sql = "DELETE FROM $nomeDaTabela2 WHERE email = '$usuario' and nomeMeta = '$nomeMeta'";
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 	}
 	function mostrarMetas($conexao, $nomeDaTabela2){
@@ -50,7 +51,10 @@ class Metas
 		 $nome = htmlentities($registro[0], ENT_QUOTES,"UTF-8");
 		 $email = htmlentities($registro[1], ENT_QUOTES,"UTF-8");//registro["nome"]
 		 $valorTotal = htmlentities($registro[2],ENT_QUOTES,"UTF-8") ;
-		 $valorAtual = htmlentities($registro[3],ENT_QUOTES,"UTF-8") ;
+		 $valorAtual = htmlentities($registro[3],ENT_QUOTES,"UTF-8") ;	
+		 $valorAtual = floatval($valorAtual);
+		 $valorTotal = floatval($valorTotal);
+		 $porcentagem = (100*$valorAtual)/$valorTotal; 
 
 			echo "
 				
@@ -60,7 +64,7 @@ class Metas
 
 				<div>
 					<canvas id='graficoAnimacao' width='600' height='400'></canvas>
-					<script type='text/javascript'> desenhaCirculo(80, 50, 50, 'yellow',80);</script>
+					<script type='text/javascript'> desenhaCirculo(80, 50, 50, 'yellow', $porcentagem);</script>
 				</div>
 					
 			</div>
@@ -77,7 +81,9 @@ class Metas
 					<p>Meta Final: $valorTotal</p>
 				</div>
 				<span class='btn-cadastre'>
-					<button><a href='historico.php?meta=$nome'>História</a></button>
+					<button name='historico'><a href='historico.php?meta=$nome'>História</a></button>
+					<button name='apagar'><a href='paginaUsuario.php?apagar=$nome'>Apagar</a></button>
+					<button name='atualizar'><a href='paginaUsuario.php?atualizaValor=$nome'>Atualizar</a></button>
 				</span>
 
 		</section>";
