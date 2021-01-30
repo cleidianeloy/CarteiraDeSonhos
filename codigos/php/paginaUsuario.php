@@ -4,13 +4,16 @@
 	testeUsuario();
 	$nome = nome();
 	$email = email();
+	atualizaMeta();
  ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8"/>
 	<title>Pagina - Usuario</title>
+	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/style.css">
+	<script type="text/javascript" src= "../javascript/functions.js"></script>
 </head>
 <body>
 		<header class="menu">
@@ -41,7 +44,6 @@
 			</div> 
 
 	 </section> 	-->
-		
 		<section class="id">
 			<div> 
 
@@ -80,7 +82,7 @@
 			</div>
 		</section>	
 		
-		<section class="metas1">
+		<!--<section class="metas1">
 			<div> 
 
 				<div>
@@ -105,7 +107,11 @@
 					<button><a href="historico.html">História</a></button>
 				</span>
 
-		</section>	
+		</section>	-->
+		<?php mostraMetas();
+			  apagarMeta()?>
+		<script type="text/javascript"></script>
+
 			
 		
 
