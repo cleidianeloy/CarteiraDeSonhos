@@ -4,7 +4,8 @@ class Metas
 {
 	public $nomeMeta;
 	public $usuario;
-	public $valor;
+	public $valorTotal;
+	public $valorAtual;
 
 	
 
