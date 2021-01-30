@@ -7,6 +7,7 @@ require_once "funcoes/funcoes.inc.php";
 <head>					
 	<meta charset="utf-8"/>
 	<title>Home</title>
+	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/style.css">
 	<script type="text/javascript" src= "../javascript/functions.js"></script> 
 </head>
