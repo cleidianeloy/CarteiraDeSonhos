@@ -6,6 +6,7 @@ require_once "funcoes/funcoes.inc.php";
 <head>
 	<meta charset="utf-8"/>
 	<title>Cadastro</title>
+	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	
 </head>
