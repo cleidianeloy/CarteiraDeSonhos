@@ -130,6 +130,7 @@ function mostraMetas(){
 	$meta->mostrarMetas($conexao, $banco->nomeDaTabela2);
 }
 function atualizaMeta(){
+	//essa função é para calcular o que tem no historico 
 	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
     $conexao = $banco->criarConexao();
     $banco->criarBanco($conexao);
@@ -151,6 +152,21 @@ function mostrarHistorico(){
 
 	$historico->mostrar($conexao);
 }
+function apagarMeta(){
+	//está pedido de confirmação!
+	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
+    $conexao = $banco->criarConexao();
+    $banco->criarBanco($conexao);
+	$banco->abrirBanco($conexao);
+	$banco->definirCharset($conexao);
+	$meta = new Metas();
+	if(isset($_GET['apagar'])){
+		$meta->apagarMeta($conexao, $banco->nomeDaTabela2);
+	}
+}
+
+
+
 
 
 
