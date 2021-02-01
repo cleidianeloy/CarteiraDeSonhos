@@ -22,7 +22,7 @@
 					<img  src="../../midias/imagem/logo.svg" alt="logo">
 				</div>
 				<div class="links">
-					<a class="topico" href="#conheça">Conheça</a>
+					<a class="topico" href="home.php#conheça">Conheça</a>
 					<a class="topico" href="#contato">Contato</a> 
 					<a class="topico" href="#cadastro-login"><?php echo "$nome";?></a>
 				</div> 
@@ -45,10 +45,10 @@
 
 	 </section> 	-->
 		<section class="id">
-			<div> 
+			<div class="usuario"> 
 
 				<div>
-					<img src="../../midias/imagem/caneta.svg" alt="imgCaneta">	
+					<a><img src="../../midias/imagem/caneta.svg" alt="imgCaneta"></a>
 				</div>			
 					<h2>Nome usuario: <?php echo "$nome";?><br>  
 					 	 E-mail: <?php echo "$email";?> </h2> 

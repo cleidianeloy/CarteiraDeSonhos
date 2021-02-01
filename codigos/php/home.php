@@ -12,7 +12,8 @@ require_once "funcoes/funcoes.inc.php";
 	<script type="text/javascript" src= "../javascript/functions.js"></script> 
 </head>
 <body>
-		<header class="menu">
+<div class="menu">
+			<nav style="width: 100%;">
 			 <div id="menu" class="container">
 				<div class="logo">
 					<img  src="../../midias/imagem/logo.svg" alt="logo">
@@ -20,12 +21,14 @@ require_once "funcoes/funcoes.inc.php";
 				<div class="links">
 					<a class="topico" href="#conheça">Conheça</a>
 					<a class="topico" href="#contato">Contato</a> 
-					<a class="topico" href="#cadastro-login">Login/Cadastre-se</a>
-				</div> 
-			 </div>
-		</header>
-		<section id="login" class="container">
-			<div>
+					<a class="topico login" href="#cadastro-login" data-modal="abrir">Login/Cadastre-se</a>
+					</div> 
+			 </div>	
+		</nav>
+</div>
+		<section id="login" class="container modal-container" data-modal="conteiner">
+			<button data-modal="fechar" class="fechar">X</button>
+			<div class="modal">
 				<form action="home.php" method="post">
 					<label>Email:</label>
 					<input type="email" name="email" required=""><br>
@@ -74,11 +77,13 @@ require_once "funcoes/funcoes.inc.php";
 					<img src="../../midias/imagem/106.png" alt="IMG ">
 				</div>
 				<div>
-					<!--<img src="../../midias/imagem/grafico.png" alt="Img Grafico ">--->
-					<canvas id="graficoAnimacao" width="600" height="400"></canvas>
+
+					<!--<img src="../../midias/imagem/grafico.png" alt="Img Grafico ">			--->
+					<canvas id="graficoAnimacao" width="600" height="400" class="grafico"></canvas>
 					<script type="text/javascript"> animacaoGrafico(300, 200, 100, 'blue',80);</script>
 					<h2 class="texto-grafico"> Suas metas será visível por meio de  porcentagem de conclusão, sendo acompanhada  por histórico de datas.<br> Agora você  pode planejar todas as suas metas e deslumbrar com as suas conquistas .</h2><br><br>
-				</div>			
+				</div>
+				
 			</div>
 			<span class="btn-cadastre">
 				<a href="cadastro.html">Cadastre-se</a>

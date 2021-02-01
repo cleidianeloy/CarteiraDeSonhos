@@ -1,3 +1,5 @@
+
+
 function desenhaCirculo(x, y, raio, cor,valor){
 
     var tela = document.getElementById('graficoAnimacao');
@@ -18,7 +20,7 @@ function desenhaCirculo(x, y, raio, cor,valor){
 function porcentagem(valor){
         return (valor*2)/100
 }
-  function animacaoGrafico(x, y, raio, cor ,porcentagem) {
+function animacaoGrafico(x, y, raio, cor ,porcentagem) {
         var valor = 1 ;
         function animacao(){
 
@@ -40,7 +42,27 @@ function porcentagem(valor){
          }
 
     iniciaAnimacao(animacao, 20);
+}
 
-
-
+function initModal() {
+    const botaoAbrir = document.querySelector('[data-modal="abrir"]');
+    const botaoFechar = document.querySelector('[data-modal="fechar"]');
+    const containerModal = document.querySelector('[data-modal="container"]');
+    console.log(botaoAbrir, botaoFechar, containerModal);
+    if(botaoAbrir && botaoFechar && containerModal) {
+      
+      function toggleModal(event) {
+        event.preventDefault();
+        containerModal.classList.toggle('ativo');
+      }
+      function cliqueForaModal(event) {
+        if(event.target === this) {
+          toggleModal(event);
+        }
+      }
+    
+      botaoAbrir.addEventListener('click', toggleModal);
+      botaoFechar.addEventListener('click', toggleModal);
+      containerModal.addEventListener('click', cliqueForaModal);
+    }
 }
