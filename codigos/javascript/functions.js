@@ -66,3 +66,6 @@ function initModal() {
       containerModal.addEventListener('click', cliqueForaModal);
     }
 }
+
+
+

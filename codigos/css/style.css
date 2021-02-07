@@ -314,3 +314,85 @@ body {
     font-size: 35px;
     padding: 15px 19px 14px 18px;
 }
+/*CSS pagina do usuario*/
+.section-usuario {
+    background-color: #03B6CF;
+}
+.section-usuario .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.usuario > h2 {
+    font-size: 50px;
+    font-weight: normal;
+}
+.edicao-meta{
+    display: none;
+}
+.edicao-usuario {
+    margin-top: 34px;
+}
+.container .nova-meta {
+    width: 100%;
+}
+.container .nova-meta > h2 {
+    font-size: 35px;
+}
+.section-metas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 56px;
+}
+.section-metas .metas {
+    max-width: 1052px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #03B6CFA3;
+    margin-bottom: 150px;
+    border-radius: 50px;
+}
+.titulo-meta {
+    width: 100%;
+    height: 229px;
+    background: #03B6CF 0% 0% no-repeat padding-box;
+    border-radius: 50px 50px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titulo-meta h2 {
+    font-size: 52px;
+}
+.conteuo-meta {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.texto-meta > p {
+    font-size: 50px;
+}
+.conteuo-meta img {
+    margin-top: 27px;
+}
+.metas .btn-cadastre {
+    margin-top: 17px;
+    margin-bottom: 37px;
+    width: 100%;
+    justify-content: space-around;
+}
+.btn-cadastre > button {
+    background: #03B6CF 0% 0% no-repeat padding-box;
+    border-radius: 50px;
+    border: unset;
+    height: 95px;
+}
+.btn-cadastre > button > a {
+    font-size: 35px;
+    text-decoration: unset;
+    padding: 24px 78px;
+}

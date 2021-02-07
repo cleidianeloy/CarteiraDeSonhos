@@ -15,8 +15,7 @@
 	<link rel="stylesheet" href="../css/style.css">
 	<script type="text/javascript" src= "../javascript/functions.js"></script>
 </head>
-<body>
-		<header class="menu">
+<header class="menu">
 			 <div id="menu" class="container">
 				<div class="logo">
 					<img  src="../../midias/imagem/logo.svg" alt="logo">
@@ -28,7 +27,7 @@
 				</div> 
 			 </div>
 		</header>
-
+<body>
 <!-- <section id="login" class="container">
 		<div>
 				<form action="paginaUsuario.php" method="post">
@@ -44,24 +43,21 @@
 			</div> 
 
 	 </section> 	-->
-		<section class="id">
-			<div class="usuario"> 
-
-				<div>
-					<a><img src="../../midias/imagem/caneta.svg" alt="imgCaneta"></a>
-				</div>			
-					<h2>Nome usuario: <?php echo "$nome";?><br>  
-					 	 E-mail: <?php echo "$email";?> </h2> 
+		<section class="id section-usuario">
+		<div class="container">
+			<div class="usuario"> 		
+				<h2>Nome usuario: <?php echo "$nome";?></h2> 
+				<h2>E-mail: <?php echo "$email";?> </h2> 
 			</div>
-		</section>	
-
-		<section class="novaMeta">
-			<div> 
-							
-					<h2> Nova meta + </h2> 
-
+			<div class="edicao-usuario">
+				<a><img src="../../midias/imagem/caneta.svg" alt="imgCaneta"></a>
 			</div>
-			<div>
+		</div>
+		<div class="container">	
+			<div class="nova-meta"> 		
+				<h2> Nova meta + </h2> 
+			</div>
+			<div class="edicao-meta">
 				<form method="post" action="paginaUsuario.php">
 					<label>Nome:</label>
 					<input type="text" name="nome-meta" required ><br>
@@ -77,44 +73,15 @@
 							//$valor= $_POST["valor-meta"];
 							cadastrarMeta();
 							} 
-				?>
-				 
+				?>			 
 			</div>
+		</div>
 		</section>	
-		
-		<!--<section class="metas1">
-			<div> 
-
-				<div>
-					<img src="../../midias/imagem/" alt="imgGrafico">	
-				</div>
-					
-			</div>
-		</section>	
-
-		<section class="metas1">
-
-					<h2> Meta 1: </h2>
-			<div> 
-				<div>
-					<img src="../../midias/imagem/caneta.svg" alt="imgCaneta">	
-				</div>
-
-					<p>Guardado:</p>
-					<p>Meta Final:</p>
-				</div>
-				<span class="btn-cadastre">
-					<button><a href="historico.html">História</a></button>
-				</span>
-
-		</section>	-->
+		<div class="section-metas"> 
 		<?php mostraMetas();
 			  apagarMeta()?>
+		</div>	  
 		<script type="text/javascript"></script>
-
-			
-		
-
 		<section class="footer">
 			<div  class="container">
 				<h1>Contato</h1>

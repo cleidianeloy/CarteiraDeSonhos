@@ -45,7 +45,6 @@ class Metas
 
 		$sql = "SELECT * FROM $nomeDaTabela2 WHERE email = '$email'";
 		$resultado = $conexao->query($sql) or exit($conexao->error);
-
 		while($registro = $resultado->fetch_array())
 		{
 // LEMBRE-SE: SEGUNRANÇA DA NOSSA APLICAÇÃO É IMPORTANTE: SEMPRE QUE VOCÊ FIZER O PHP RECEBER DADOS DO BANCO DE DADOS, CERTIFIQUE-SE DE UTILIZAR FILTRAGEM ADQUADA, IMPEDINDO QUE SUA APLICAÇÃO FUNCIONE COMO UMA FERRAMENTA DE INVASÃO DA MAQUINA CLIENTE(XSS)
@@ -57,37 +56,26 @@ class Metas
 		 $valorTotal = floatval($valorTotal);
 		 $porcentagem = (100*$valorAtual)/$valorTotal; 
 
-			echo "
-				
-		
+			echo "	
 			<section class='metas'>
-			<div> 
-
-				<div>
-					<canvas id='graficoAnimacao' width='600' height='400'></canvas>
-					<script type='text/javascript'> desenhaCirculo(80, 50, 50, 'yellow', $porcentagem);</script>
-				</div>
-					
+			<div class='titulo-meta'>
+				<h2> $nome </h2>
 			</div>
-		</section>	
-			<section class='metas'>
-
-					<h2> $nome </h2>
-					<div> 
-				<div>
-					<img src='../../midias/imagem/caneta.svg' alt='imgCaneta'>	
-				</div>
-
+			<div class='conteuo-meta'> 
+				<div class='texto-meta'>
 					<p>Guardado: $valorAtual</p>
 					<p>Meta Final: $valorTotal</p>
 				</div>
-				<span class='btn-cadastre'>
-					<button name='historico'><a href='historico.php?meta=$nome'>História</a></button>
-					<button name='apagar'><a href='paginaUsuario.php?apagar=$nome'>Apagar</a></button>
-					<button name='atualizar'><a href='paginaUsuario.php?atualizaValor=$nome'>Atualizar</a></button>
-				</span>
-
-		</section>";
+				<div>
+					<img src='../../midias/imagem/caneta.svg' alt='imgCaneta'>	
+				</div>	
+			</div>
+			<span class='btn-cadastre'>
+				<button class='historico' name='historico'><a href='historico.php?meta=$nome'>História</a></button>
+				<button class='apagar' name='apagar'><a href='paginaUsuario.php?apagar=$nome'>Apagar</a></button>
+				<button class='atualizar' name='atualizar'><a href='paginaUsuario.php?atualizaValor=$nome'>Atualizar</a></button>
+			</span>
+			</section>";
 		}
 	
 	}

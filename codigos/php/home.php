@@ -16,7 +16,7 @@ require_once "funcoes/funcoes.inc.php";
 			<nav style="width: 100%;">
 			 <div id="menu" class="container">
 				<div class="logo">
-					<img  src="../../midias/imagem/logo.svg" alt="logo">
+					<a href="home.php"><img  src="../../midias/imagem/logo.svg" alt="logo"></a>
 				</div>
 				<div class="links">
 					<a class="topico" href="#conheça">Conheça</a>
