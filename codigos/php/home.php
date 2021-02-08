@@ -86,7 +86,7 @@ require_once "funcoes/funcoes.inc.php";
 				
 			</div>
 			<span class="btn-cadastre">
-				<a href="cadastro.html">Cadastre-se</a>
+				<a href="cadastro.php">Cadastre-se</a>
 			</span>
 		</section>	
 		<section class="footer">
