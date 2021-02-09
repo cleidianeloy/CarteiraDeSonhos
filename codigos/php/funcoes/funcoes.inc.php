@@ -162,7 +162,9 @@ function apagarMeta(){
 	$meta = new Metas();
 	if(isset($_GET['apagar'])){
 		$meta->apagarMeta($conexao, $banco->nomeDaTabela2);
+		header("Location: paginaUsuario.php");
 	}
+
 }
 
 
