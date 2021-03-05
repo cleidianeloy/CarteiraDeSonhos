@@ -1,5 +1,3 @@
-
-
 function desenhaCirculo(x, y, raio, cor,valor){
 
     var tela = document.getElementById('graficoAnimacao');
@@ -44,28 +42,14 @@ function animacaoGrafico(x, y, raio, cor ,porcentagem) {
     iniciaAnimacao(animacao, 20);
 }
 
-function initModal() {
-    const botaoAbrir = document.querySelector('[data-modal="abrir"]');
-    const botaoFechar = document.querySelector('[data-modal="fechar"]');
-    const containerModal = document.querySelector('[data-modal="container"]');
-    console.log(botaoAbrir, botaoFechar, containerModal);
-    if(botaoAbrir && botaoFechar && containerModal) {
-      
-      function toggleModal(event) {
-        event.preventDefault();
-        containerModal.classList.toggle('ativo');
-      }
-      function cliqueForaModal(event) {
-        if(event.target === this) {
-          toggleModal(event);
-        }
-      }
-    
-      botaoAbrir.addEventListener('click', toggleModal);
-      botaoFechar.addEventListener('click', toggleModal);
-      containerModal.addEventListener('click', cliqueForaModal);
-    }
+jQuery(function($){
+  $('.links a').click(function() {
+  if ( $('#login').hasClass('aberto') ) {
+    $('#login').removeClass('aberto');
+  } else {
+    $('#login').addClass('aberto');    
 }
-
+});
+}); 
 
 

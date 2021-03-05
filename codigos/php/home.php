@@ -9,7 +9,6 @@ require_once "funcoes/funcoes.inc.php";
 	<title>Home</title>
 	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/style.css">
-	<script type="text/javascript" src= "../javascript/functions.js"></script> 
 </head>
 <body>
 <div class="menu">
@@ -19,33 +18,31 @@ require_once "funcoes/funcoes.inc.php";
 					<a href="home.php"><img  src="../../midias/imagem/logo.svg" alt="logo"></a>
 				</div>
 				<div class="links">
-					<a class="topico" href="#conheça">Conheça</a>
+					<a class="topico" href="#conheca">Conheça</a>
 					<a class="topico" href="#contato">Contato</a> 
-					<a class="topico login" href="#cadastro-login" data-modal="abrir">Login/Cadastre-se</a>
+					<a class="topico login" href="#login">Login/Cadastre-se</a>
 					</div> 
 			 </div>	
 		</nav>
 </div>
-		<section id="login" class="container modal-container" data-modal="conteiner">
-			<button data-modal="fechar" class="fechar">X</button>
+		<section id="login" class="container modal-container">
 			<div class="modal">
 				<form action="home.php" method="post">
-					<label>Email:</label>
-					<input type="email" name="email" required=""><br>
-					<label>Senha:</label>
-					<input type="password" name="senha" required=""><br>
+					<label>Email:<input type="email" name="email" required="" class="fundo-input"></label>
+					<label>Senha:<input type="password" name="senha" required=""  class="fundo-input"></label>
 		
 					<button type="submit" name="login">Login</button>
 
 				</form>
-
 				<?php
 					if(isset($_POST["login"])){
 				 		login();
 				}?>
 				
-				<a href="cadastro.php">Clique aqui caso não tenha cadastro</a><br>
-				<a href="esqueciSenha.php">	Esqueci minha senha</a>
+				<div class="cadastro-esqueci">
+					<a href="cadastro.php">Clique aqui caso não tenha cadastro</a><br>
+					<a href="esqueciSenha.php">	Esqueci minha senha</a>
+				</div>
 			</div>
 		</section>
 		<section  class="container">
@@ -65,7 +62,7 @@ require_once "funcoes/funcoes.inc.php";
 				</div>	
 			</div>		
 		</section>
-		<section  class="container">
+		<section  class="container" id="conheca">
 			<div class="conheca">
 				<h1>Conheça</h1>
 				<div>
@@ -83,13 +80,14 @@ require_once "funcoes/funcoes.inc.php";
 					<script type="text/javascript"> animacaoGrafico(300, 200, 100, 'blue',80);</script>
 					<h2 class="texto-grafico"> Suas metas será visível por meio de  porcentagem de conclusão, sendo acompanhada  por histórico de datas.<br> Agora você  pode planejar todas as suas metas e deslumbrar com as suas conquistas .</h2><br><br>
 				</div>
-				
 			</div>
 			<span class="btn-cadastre">
 				<a href="cadastro.php">Cadastre-se</a>
 			</span>
 		</section>	
-		<section class="footer">
+		<section class="footer" id="contato">
+		<script type="text/javascript" src="../javascript/jquery-3.5.1.min.js"></script>
+		<script type="text/javascript" src="../javascript/functions.js"></script> 
 			<div  class="container">
 				<h1>Contato</h1>
 				<div class="contato">
