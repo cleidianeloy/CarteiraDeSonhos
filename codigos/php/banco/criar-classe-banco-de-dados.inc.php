@@ -58,23 +58,26 @@ class BancoDeDados
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 		
 		$sql = "CREATE TABLE IF NOT EXISTS $this->nomeDaTabela2(
-				nomeMeta VARCHAR(300) PRIMARY KEY,
-				email VARCHAR(70),
+				id    INT PRIMARY KEY AUTO_INCREMENT,
+				nomeMeta VARCHAR(300),
+				usuario VARCHAR(70),
 				valorTotal DECIMAL(15,2),
 				valorAtual DECIMAL(15,2),
+				UNIQUE (usuario,nomeMeta),
 
-				FOREIGN KEY (email) REFERENCES 
-				$this->nomeDaTabela1 (email)) ENGINE=innoDB";
+				FOREIGN KEY (usuario) REFERENCES 
+				$this->nomeDaTabela1 (email) ON DELETE CASCADE) 
+				ENGINE=innoDB";
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 		//colocar um id como primary key 
 		$sql = "CREATE TABLE IF NOT EXISTS $this->nomeDaTabela3(
-				id    INT PRIMARY KEY AUTO_INCREMENT,
-				nomeMeta VARCHAR(300),
-				data DATE,
+				id    INT ,
+				data  DATE,
 				valor DECIMAL(15,2),
 
-				FOREIGN KEY (nomeMeta) REFERENCES 
-				$this->nomeDaTabela2 (nomeMeta)) ENGINE=innoDB";
+				FOREIGN KEY (id) REFERENCES 
+				$this->nomeDaTabela2 (id) ON DELETE CASCADE)  
+				ENGINE=innoDB";
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 	}
 # MÉTODO P/ FINALIZAR A CONEXÃO.

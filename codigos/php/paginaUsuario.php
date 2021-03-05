@@ -1,10 +1,12 @@
 <?php
+	session_cache_expire(60);
 	session_start();
+
 	require_once "funcoes/funcoes.inc.php"; 
 	testeUsuario();
 	$nome = nome();
 	$email = email();
-	atualizaMeta();
+	atualizaValorAtual();
  ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -57,7 +59,7 @@
 			<div class="nova-meta"> 		
 				<h2> Nova meta + </h2> 
 			</div>
-			<div class="edicao-meta">
+			<!--<div class="edicao-meta">-->
 				<form method="post" action="paginaUsuario.php">
 					<label>Nome:</label>
 					<input type="text" name="nome-meta" required ><br>

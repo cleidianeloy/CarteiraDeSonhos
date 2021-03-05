@@ -1,3 +1,9 @@
+<?php
+session_cache_expire(60);
+session_start();
+
+require_once "funcoes/funcoes.inc.php"; 
+ ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

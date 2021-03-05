@@ -1,5 +1,4 @@
-<?php
-session_cache_expire(60);
+<?php session_cache_expire(60);
 session_start();
 
 require_once "funcoes/funcoes.inc.php"; 
@@ -28,9 +27,35 @@ require_once "funcoes/funcoes.inc.php";
 		<section class="historico">
 			<div> 
 
-				 <?php mostrarHistorico(); ?>
+				 <form method="POST">
+				 	<label>Adicionar</label>
+				 	<input onclick="trocaMin()" type="radio" name="tipoValor" id="adicionar" value="adicionar" checked="">
+				 	<br>
+				 	<label>Remover</label>
+				 	<input onclick="trocaMax()" type="radio" name="tipoValor" id="remover" value="remover">
+				 	<br>
+				 	<label>Valor</label>
+				 	<input type="number" id="valor-depositado" name="valor-depositado">
+				 	<button type="submit" name="atualizar-meta">Atualizar</button>
+				 </form>
 					
-
+				 <script type="text/javascript">
+				 	function trocaMin(){
+				 		var x = document.getElementById("valor-depositado");
+				 		x.setAttribute("min",0);
+				 		x.setAttribute("max",999999999999999);
+				 	}
+				 	function trocaMax(){
+				 		var x = document.getElementById("valor-depositado");
+				 		x.setAttribute("max",0);
+				 		x.setAttribute("min", -999999999999999);
+				 	} 
+				 </script>
+				 <?php
+				 	if(isset($_POST["atualizar-meta"])){
+				 		cadastrarHistorico();
+				 	}
+				 ?>
 			</div>
 		</section>
 
