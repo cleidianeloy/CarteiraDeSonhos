@@ -129,7 +129,7 @@ function mostraMetas(){
 	$historico = new Historico();
 	$meta->mostrarMetas($conexao, $banco->nomeDaTabela2);
 }
-function atualizaMeta(){
+function atualizaValorAtual(){
 	//essa função é para calcular o que tem no historico 
 	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
     $conexao = $banco->criarConexao();
@@ -139,7 +139,22 @@ function atualizaMeta(){
 
 	$meta = new Metas();
 
-	$meta->atualizaValor($conexao, $banco->nomeDaTabela2);
+	$meta->atualizaValorAtual($conexao, $banco->nomeDaTabela2);
+}
+function cadastrarHistorico(){
+	//adicionar valor na meta
+	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
+    $conexao = $banco->criarConexao();
+    $banco->criarBanco($conexao);
+	$banco->abrirBanco($conexao);
+	$banco->definirCharset($conexao);
+
+	$historico = new Historico();
+	$historico->receberDadosFormulario($conexao);
+	$historico->cadastrar($conexao, $banco->nomeDaTabela3);
+
+
+	
 }
 function mostrarHistorico(){
 	
