@@ -28,9 +28,9 @@ class Historico
 
 	function mostrar($conexao){
 		$email = trim($conexao->escape_string($_SESSION["email"]));
-		$idNome = trim($conexao->escape_string($_GET['meta']));
+		$idMeta = trim($conexao->escape_string($_GET['meta']));
 
-		$sql = "SELECT * FROM historico,metas WHERE metas.id = '$idNome'";
+		$sql = "SELECT * FROM historico WHERE historico.id = '$idMeta'";
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 
 		echo "<table>

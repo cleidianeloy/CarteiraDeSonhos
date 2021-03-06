@@ -115,8 +115,7 @@ class Metas
 		$resultado = $conexao->query($sql) or exit($conexao->error);
 		while ($registro = $resultado->fetch_array()) {
 			$idMeta = htmlentities($registro[0], ENT_QUOTES,"UTF-8");
-			$sql = "UPDATE $nomeDaTabela2 SET valorAtual = (SELECT SUM(historico.valor) from historico where metas.id = '$idMeta') where
-			metas.id ='$idMeta'";
+			$sql = "UPDATE metas SET valorAtual = (select sum(historico.valor) from historico where historico.id = $idMeta) where metas.id IN (select id  from  historico where historico.id = $idMeta)";
 			$sql = $conexao->query($sql) or exit($conexao->error);
 		}
 
