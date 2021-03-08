@@ -20,8 +20,8 @@
 <header class="menu">
 			 <div id="menu" class="container">
 				<div class="logo">
-					<img  src="../../midias/imagem/logo.svg" alt="logo">
-				</div>
+					<a href="home.php"><img  src="../../midias/imagem/logo.svg" alt="logo"></a>
+					</div>
 				<div class="links">
 					<a class="topico" href="home.php#conheça">Conheça</a>
 					<a class="topico" href="#contato">Contato</a> 
