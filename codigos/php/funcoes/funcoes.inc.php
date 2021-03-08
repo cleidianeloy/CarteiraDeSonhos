@@ -140,6 +140,7 @@ function atualizaValorAtual(){
 	$meta = new Metas();
 
 	$meta->atualizaValorAtual($conexao, $banco->nomeDaTabela2);
+
 }
 function cadastrarHistorico(){
 	//adicionar valor na meta
@@ -152,6 +153,7 @@ function cadastrarHistorico(){
 	$historico = new Historico();
 	$historico->receberDadosFormulario($conexao);
 	$historico->cadastrar($conexao, $banco->nomeDaTabela3);
+	header("Location: paginaUsuario.php");
 
 
 	
