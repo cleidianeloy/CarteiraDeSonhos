@@ -52,10 +52,11 @@ class Metas
 		 $id = htmlentities($registro[0], ENT_QUOTES,"UTF-8");
 		 $nome = htmlentities($registro[1], ENT_QUOTES,"UTF-8");//registro["nome"]
 		 $valorTotal = htmlentities($registro[3],ENT_QUOTES,"UTF-8") ;
-		 $valorAtual = htmlentities($registro[4],ENT_QUOTES,"UTF-8") ;	
-		 $valorAtual = floatval($valorAtual);
-		 $valorTotal = floatval($valorTotal);
+		 $valorAtual = htmlentities($registro[4],ENT_QUOTES,"UTF-8") ;
+
 		 $porcentagem = (100*$valorAtual)/$valorTotal; 
+		 $valorAtual = number_format($valorAtual, 2,",", ".");
+		 $valorTotal = number_format($valorTotal, 2,",", ".");
 
 			echo "	
 			<section class='metas'>
@@ -67,8 +68,8 @@ class Metas
 			</div>
 			<div class='conteuo-meta'> 
 				<div class='texto-meta'>
-					<p>Guardado: $valorAtual</p>
-					<p>Meta Final: $valorTotal</p>
+					<p>Guardado: R$ $valorAtual</p>
+					<p>Meta Final: R$ $valorTotal</p>
 				</div>
 				<div>
 					<img src='../../midias/imagem/caneta.svg' alt='imgCaneta'>	
