@@ -60,7 +60,10 @@ class Metas
 			echo "	
 			<section class='metas'>
 			<div class='titulo-meta'>
-				<h2> $nome </h2>
+			<canvas id='graficoAnimacao' width='600' height='400 class='grafico'></canvas>
+				<script type='text/javascript'> desenhaCirculo(300, 200, 100, 'blue',$porcentagem);</script>
+				
+			<h2> $nome </h2>
 			</div>
 			<div class='conteuo-meta'> 
 				<div class='texto-meta'>

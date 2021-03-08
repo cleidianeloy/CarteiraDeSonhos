@@ -11,6 +11,7 @@ require_once "funcoes/funcoes.inc.php";
 	<title>Home</title>
 	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/style.css">
+	<script type="text/javascript" src= "../javascript/functions.js"></script> 
 </head>
 <body>
 <div class="menu">
@@ -80,6 +81,7 @@ require_once "funcoes/funcoes.inc.php";
 					<!--<img src="../../midias/imagem/grafico.png" alt="Img Grafico ">			--->
 					<canvas id="graficoAnimacao" width="600" height="400" class="grafico"></canvas>
 					<script type="text/javascript"> animacaoGrafico(300, 200, 100, 'blue',80);</script>
+
 					<h2 class="texto-grafico"> Suas metas será visível por meio de  porcentagem de conclusão, sendo acompanhada  por histórico de datas.<br> Agora você  pode planejar todas as suas metas e deslumbrar com as suas conquistas .</h2><br><br>
 				</div>
 			</div>
