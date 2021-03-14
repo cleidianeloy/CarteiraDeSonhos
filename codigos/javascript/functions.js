@@ -43,7 +43,7 @@ function animacaoGrafico(x, y, raio, cor ,porcentagem) {
 }
 
 jQuery(function($){
-  $('.links a').click(function() {
+  $('.links .login').click(function() {
   if ( $('#login').hasClass('aberto') ) {
     $('#login').removeClass('aberto');
   } else {
