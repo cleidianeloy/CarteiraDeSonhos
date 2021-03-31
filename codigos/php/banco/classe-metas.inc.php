@@ -14,6 +14,10 @@ class Metas
 	{
 		$nome 	= trim($conexao->escape_string($_POST["nome-meta"]));
 		$valorTotal 	= trim($conexao->escape_string($_POST["valor-meta"]));
+		$valorTotal = str_replace(",",".", str_replace(".","", $valorTotal));
+		//tive que usar o replace porque o numero formatado estava dando problema de reconhecer 
+
+		$valorTotal = (double)$valorTotal;
 		$usuario = trim($conexao ->escape_string($_SESSION["email"]));
 
 		$this->nomeMeta	= $nome;
@@ -39,14 +43,19 @@ class Metas
 		$usuario = trim($conexao ->escape_string($_SESSION["email"]));
 		$sql = "DELETE FROM $nomeDaTabela2 WHERE usuario = '$usuario' and id = '$idMeta'";
 		$resultado = $conexao->query($sql) or exit($conexao->error);
+		
 	}
 	function mostrarMetas($conexao, $nomeDaTabela2){
-		$email 	= trim($conexao->escape_string($_SESSION["email"]));
 
+		$email 	= trim($conexao->escape_string($_SESSION["email"]));
 
 		$sql = "SELECT * FROM $nomeDaTabela2 WHERE usuario = '$email'";
 		$resultado = $conexao->query($sql) or exit($conexao->error);
-		while($registro = $resultado->fetch_array())
+		if($conexao->affected_rows == 0){
+			echo "<h2>Não existe nenhuma meta, quando alguma for cadastrada vai aparecer aqui</h2>";
+		}else
+		{
+			while($registro = $resultado->fetch_array())
 		{
 	// LEMBRE-SE: SEGUNRANÇA DA NOSSA APLICAÇÃO É IMPORTANTE: SEMPRE QUE VOCÊ FIZER O PHP RECEBER DADOS DO BANCO DE DADOS, CERTIFIQUE-SE DE UTILIZAR FILTRAGEM ADQUADA, IMPEDINDO QUE SUA APLICAÇÃO FUNCIONE COMO UMA FERRAMENTA DE INVASÃO DA MAQUINA CLIENTE(XSS)
 		 $id = htmlentities($registro[0], ENT_QUOTES,"UTF-8");
@@ -81,6 +90,9 @@ class Metas
 				<button class='atualizar' name='atualizar'><a href='atualiza.php?atualizaValor=$id'>Atualizar</a></button>
 			</span>
 			</section>";
+
+		}
+		
 		}
 	
 	}

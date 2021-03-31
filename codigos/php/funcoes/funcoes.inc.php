@@ -1,4 +1,5 @@
 <?php
+
 require_once (__DIR__.'/../banco/criar-classe-banco-de-dados.inc.php');
 require_once (__DIR__.'/../banco/classe-usuario.inc.php');
 require_once(__DIR__.'/../banco/classe-metas.inc.php');
@@ -18,9 +19,10 @@ $banco->definirCharset($conexao);
 $banco->criarTabelas($conexao);
 
 $usuario  = new Usuario();
-	session_start();
+
 		$teste = $usuario->login($conexao, $banco->nomeDaTabela1); //verifica se login é permitido
 		if($teste){
+			session_start();
 			$email = $_POST["email"];
 			$_SESSION["email"] = $email; 
 			header("Location: paginaUsuario.php");
@@ -47,7 +49,7 @@ $banco->criarTabelas($conexao);
 $usuario  = new Usuario();
 		$usuario->receberDadosFormulario($conexao);
 		$usuario->cadastrar($conexao, $banco->nomeDaTabela1);
-		echo"<p> Dados do usuario cadastrado com sucesso.</p>";
+		echo"<p> Dados do usuario cadastrado com sucesso no banco de dados.</p>";
 	$banco->desconectar($conexao);
 }
 
@@ -82,24 +84,35 @@ function senha(){
 	return $senha;
 }
 function testeUsuario(){
-	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
-	$conexao = $banco->criarConexao();
-	$banco->abrirBanco($conexao);
-	$banco->definirCharset($conexao);
-	$usuario  = new Usuario();
-	$email = email();
+
 	
-	if($email){//se sessão (preenchida no cadastroLogin) não estiver vazia faça:
+	if(!$_SESSION['email']){
+		
+		header("Location: home.php");
+	}else
+	{
+		$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
+		$conexao = $banco->criarConexao();
+		$banco->abrirBanco($conexao);
+		$banco->definirCharset($conexao);
+		$usuario  = new Usuario();
+		$email = email();
+		if($email){//se sessão (preenchida no cadastroLogin) não estiver vazia faça:
 		//$email =  $email;//pegando o email guardado em cadastroLogin
-    	$nome = $usuario->retornaNome($conexao, $banco->nomeDaTabela1);//pegando o nome do usuario pelo email
-    	
-    	if($nome == false){
-		//header("Location: home.php"); //se o nome não existir ele volta pra pagina de login
-    		return false;
-    	}else
-    	{
-    		return true;
-   		}
+    		$nome = $usuario->retornaNome($conexao, $banco->nomeDaTabela1);//pegando o nome do usuario pelo email
+    		
+    		if($nome == false){
+			//header("Location: home.php"); //se o nome não existir ele volta pra pagina de login
+    			return false;
+    		}else
+    		{
+    			return true;
+   			}
+
+			}else
+			{
+			}
+	
     }
 
 	
@@ -115,7 +128,7 @@ function cadastrarMeta(){
 	$meta  = new Metas();
 		$meta->receberDadosFormulario($conexao);
 		$meta->cadastrar($conexao, $banco->nomeDaTabela2);
-		echo("<p> Dados cadastrado com sucesso.</p>");
+		echo("<p> Dados cadastrado com sucesso no banco de dados.</p>");
 	$banco->desconectar($conexao);
 }
 function mostraMetas(){
@@ -170,7 +183,8 @@ function mostrarHistorico(){
 	$historico->mostrar($conexao);
 }
 function apagarMeta(){
-	//está pedido de confirmação!
+	//está faltando pedido de confirmação!
+
 	$banco = new BancoDeDados("localhost", "root","", "CTDS", "usuario","metas","historico");
     $conexao = $banco->criarConexao();
     $banco->criarBanco($conexao);
@@ -178,11 +192,15 @@ function apagarMeta(){
 	$banco->definirCharset($conexao);
 	$meta = new Metas();
 	if(isset($_GET['apagar'])){
+		ob_start();
 		$meta->apagarMeta($conexao, $banco->nomeDaTabela2);
+		ob_end_flush();
 		header("Location: paginaUsuario.php");
 	}
-
+		
 }
+
+
 
 
 

@@ -3,6 +3,7 @@ session_cache_expire(60);
 session_start();
 
 require_once "funcoes/funcoes.inc.php"; 
+testeUsuario();
  ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,12 +16,11 @@ require_once "funcoes/funcoes.inc.php";
 			<header class="menu">
 			 <div id="menu" class="container">
 				<div class="logo">
-					<img  src="../../midias/imagem/logo.svg" alt="logo">
+					<a href="home.php"><img  src="../../midias/imagem/logo.svg" alt="logo"></a>
 				</div>
 				<div class="links">
-					<a class="topico" href="#conheça">Conheça</a>
-					<a class="topico" href="#contato">Contato</a> 
-					<a class="topico" href="#cadastro-login">Login/Cadastre-se</a>
+					<a class="topico" href="paginaUsuario.php">Pagina Usuario</a>
+					<a class="topico" href="?sair=true">Sair</a>
 				</div> 
 			 </div>
 		</header>
@@ -28,10 +28,22 @@ require_once "funcoes/funcoes.inc.php";
 		<section class="historico">
 			<div> 
 
-				 <?php mostrarHistorico(); ?>
+				 <?php
+				 if(isset($_GET["meta"])){
+				 	mostrarHistorico();
+				 }else{
+				 	header("Location: paginaUsuario.php");
+				 }
+				 ?>
 					
 
 			</div>
+			<?php
+				if(isset($_GET['sair'])){ //se existe o sair 
+					session_destroy(); //destroi a sessão
+					header("Location: home.php"); 
+				}
+?>
 		</section>
 
 		<section class="footer">

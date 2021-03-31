@@ -17,10 +17,16 @@ require_once "funcoes/funcoes.inc.php";
 					<img  src="../../midias/imagem/logo.svg" alt="logo">
 				</div>
 				<div class="links">
-					<a class="topico" href="#conheça">Conheça</a>
-					<a class="topico" href="#contato">Contato</a> 
-					<a class="topico" href="#cadastro-login">Login/Cadastre-se</a>
+					<a class="topico" href="paginaUsuario.php">Pagina Usuario</a>
+					<a class="topico" href="?sair=true">Sair</a>
 				</div> 
+				</div> 
+				<?php
+					if(isset($_GET['sair'])){ //se existe o sair 
+						session_destroy(); //destroi a sessão
+						header("Location: home.php"); 
+					 }
+?>
 			 </div>
 		</header>
 

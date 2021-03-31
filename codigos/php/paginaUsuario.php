@@ -16,6 +16,9 @@
 	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/style.css">
 	<script type="text/javascript" src= "../javascript/functions.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--carrega o jQuery-->
+	<script src="../javascript/jquery-maskmoney-master/src/jquery.maskMoney.js"></script> <!--carrega o plugin da máscara. Estou enviando o pacote em anexo-->
 </head>
 <header class="menu">
 			 <div id="menu" class="container">
@@ -23,13 +26,18 @@
 					<a href="home.php"><img  src="../../midias/imagem/logo.svg" alt="logo"></a>
 					</div>
 				<div class="links">
-					<a class="topico" href="home.php#conheça">Conheça</a>
-					<a class="topico" href="#contato">Contato</a> 
-					<a class="topico" href="#cadastro-login"><?php echo "$nome";?></a>
+					<a class="topico" href="paginaUsuario.php">Pagina Usuario</a>
+					<a class="topico" href="?sair=true">Sair</a>
 				</div> 
 			 </div>
 		</header>
 <body>
+					<?php 
+						if(isset($_GET['sair'])){ //se existe o sair 
+							session_destroy(); //destroi a sessão
+							header("Location: home.php"); 
+					} 
+					?>
 <!-- <section id="login" class="container">
 		<div>
 				<form action="paginaUsuario.php" method="post">
@@ -64,11 +72,13 @@
 					<label>Nome:</label>
 					<input type="text" name="nome-meta" required ><br>
 
-					<label>Objetivo guardado:</label>
-					<input type="number" name="valor-meta" min="0"  step="0.01" required ><br>
+					<label for="dinheiro" >Objetivo guardado:</label>
+					<input name="valor-meta" type="text" id="dinheiro" class="dinheiro form-control" style="display:inline-block" required>
+
 
 					<button type="submit" name="cadastrar-meta">Salvar Meta</button>
 				</form>
+				 <script src="../javascript/formata-moeda.js"></script>		<!--carrega o arquivo de formatação da máscara-->
 				<?php
 						if(isset($_POST["cadastrar-meta"])){
 							//$nomeMeta = $_POST["nome-meta"];
@@ -80,8 +90,11 @@
 		</div>
 		</section>	
 		<div class="section-metas"> 
-		<?php mostraMetas();
-			  apagarMeta()?>
+		<?php ob_start(); 
+			mostraMetas();
+			  apagarMeta();
+			  ob_end_flush();?>
+			  
 		</div>	  
 		<script type="text/javascript"></script>
 		<section class="footer">

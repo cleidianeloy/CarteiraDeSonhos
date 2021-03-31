@@ -11,7 +11,7 @@ require_once "funcoes/funcoes.inc.php";
 	<title>Home</title>
 	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/style.css">
-	<script type="text/javascript" src= "../javascript/functions.js"></script> 
+	<script type="text/javascript" src= "../javascript/functions"></script> 
 </head>
 <body>
 <div class="menu">
