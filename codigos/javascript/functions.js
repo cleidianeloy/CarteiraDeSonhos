@@ -42,8 +42,8 @@ function animacaoGrafico(x, y, raio, cor ,porcentagem) {
     iniciaAnimacao(animacao, 20);
 }
 
-jQuery(function($){
-  $('.links .login').click(function() {
+jQuery(document).ready(function($){
+    $('.links .login').click(function() {
   if ( $('#login').hasClass('aberto') ) {
     $('#login').removeClass('aberto');
   } else {
@@ -51,5 +51,15 @@ jQuery(function($){
 }
 });
 }); 
+
+jQuery(document).ready(function($){
+    $('#cadastrometa').click(function() {
+    if ( $('.edicao-meta').hasClass('aberto') ) {
+        $('.edicao-meta').removeClass('aberto');
+    } else {
+        $('.edicao-meta').addClass('aberto');    
+  }
+  });
+  }); 
 
 

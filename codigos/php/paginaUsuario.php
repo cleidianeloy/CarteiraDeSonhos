@@ -15,10 +15,9 @@
 	<title>Pagina - Usuario</title>
 	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/style.css">
-	<script type="text/javascript" src= "../javascript/functions.js"></script>
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--carrega o jQuery-->
 	<script src="../javascript/jquery-maskmoney-master/src/jquery.maskMoney.js"></script> <!--carrega o plugin da máscara. Estou enviando o pacote em anexo-->
+	<script type="text/javascript" src= "../javascript/functions.js"></script>
 </head>
 <header class="menu">
 			 <div id="menu" class="container">
@@ -38,21 +37,6 @@
 							header("Location: home.php"); 
 					} 
 					?>
-<!-- <section id="login" class="container">
-		<div>
-				<form action="paginaUsuario.php" method="post">
-					<label>Email:</label>
-					<input type="email" name="email"><br>
-					<label>Senha:</label>
-					<input type="password" name="senha"><br>
-		
-					<button type="submit" name="login" >Login</button>
-				</form>
-				<a href="cadastro.html">Clique aqui caso não tenha cadastro</a><br>
-				<a href="esqueciSenha.html">	Esqueci minha senha</a>
-			</div> 
-
-	 </section> 	-->
 		<section class="id section-usuario">
 		<div class="container">
 			<div class="usuario"> 		
@@ -63,19 +47,20 @@
 				<a><img src="../../midias/imagem/caneta.svg" alt="imgCaneta"></a>
 			</div>
 		</div>
-		<div class="container">	
-			<div class="nova-meta"> 		
-				<h2> Nova meta + </h2> 
+		<div class="container cadastro-meta">	
+			<div class="nova-meta" id="cadastrometa"> 		
+				<h2 class="nova-cadastro">Nova meta +</h2> 
 			</div>
-			<!--<div class="edicao-meta">-->
+			<div class="edicao-meta">
 				<form method="post" action="paginaUsuario.php">
-					<label>Nome:</label>
-					<input type="text" name="nome-meta" required ><br>
-
-					<label for="dinheiro" >Objetivo guardado:</label>
-					<input name="valor-meta" type="text" id="dinheiro" class="dinheiro form-control" style="display:inline-block" required>
-
-
+					<div>
+						<label>Nome:</label>
+						<input type="text" name="nome-meta" required >
+					</div>
+					<div>
+						<label for="dinheiro" >Objetivo guardado:</label>
+						<input name="valor-meta" type="text" id="dinheiro" class="dinheiro form-control"required>
+					</div>
 					<button type="submit" name="cadastrar-meta">Salvar Meta</button>
 				</form>
 				 <script src="../javascript/formata-moeda.js"></script>		<!--carrega o arquivo de formatação da máscara-->

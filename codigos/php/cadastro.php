@@ -11,6 +11,7 @@ require_once "funcoes/funcoes.inc.php";
 	<title>Cadastro</title>
 	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script type="text/javascript" src= "../javascript/functions"></script> 
 	
 </head>
 <body>

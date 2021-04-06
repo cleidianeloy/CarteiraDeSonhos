@@ -30,19 +30,21 @@ require_once "funcoes/funcoes.inc.php";
 			 </div>
 		</header>
 
-		<section class="historico">
-			<div> 
-
+		<section class="atualizar">
+		<p>Para alterar o valor guardado cliquei em Adicionar ou Remover,Para adicionar basta clicar em adicionar e escreve o valor no campo abaixo do valor, para remover clique em remover e escreve o valor abaixo do campo com o sinal de negativo.</p>
+			<div class="atualizar-valores"> 
 				 <form method="POST">
-				 	<label>Adicionar</label>
-				 	<input onclick="trocaMin()" type="radio" name="tipoValor" id="adicionar" value="adicionar" checked="">
-				 	<br>
-				 	<label>Remover</label>
-				 	<input onclick="trocaMax()" type="radio" name="tipoValor" id="remover" value="remover">
-				 	<br>
-				 	<label>Valor</label>
-				 	<input type="number" id="valor-depositado" name="valor-depositado">
-				 	<button type="submit" name="atualizar-meta">Atualizar</button>
+					<div>
+						<label>Adicionar</label>
+						<input onclick="trocaMin()" type="radio" name="tipoValor" id="adicionar" value="adicionar" checked="">
+						<label>Remover</label>
+						<input onclick="trocaMax()" type="radio" name="tipoValor" id="remover" value="remover">
+					</div>
+					<div>
+						<label>Valor</label>
+						<input type="number" id="valor-depositado" name="valor-depositado">
+						<button type="submit" name="atualizar-meta">Atualizar</button>
+					</div>
 				 </form>
 					
 				 <script type="text/javascript">
@@ -67,7 +69,7 @@ require_once "funcoes/funcoes.inc.php";
 
 		<section class="footer">
 			<div  class="container">
-				<h1>Contato</h1>
+				<h3>Contato</h3>
 				<div class="contato">
 					<div>
 						<p>Email:  email@email.com</p>

@@ -51,7 +51,7 @@ class Historico
 
 				$data = htmlentities($registro[1],ENT_QUOTES,"UTF-8") ;
 		 		$valor = htmlentities($registro[2],ENT_QUOTES,"UTF-8") ;
-				echo "<tr>
+				echo "<tr class='data-valor'>
 			       <td> $data  </td>
 			       <td> $valor  </td>
 			      </tr>";
