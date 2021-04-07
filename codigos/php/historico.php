@@ -11,6 +11,7 @@ testeUsuario();
 	<meta charset="utf-8"/>
 	<title>Histórico</title>
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 </head>
 <body>
 			<header class="menu">
