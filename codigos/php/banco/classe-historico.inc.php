@@ -11,8 +11,10 @@ class Historico
 		$valor 	= trim($conexao->escape_string($_POST["valor-depositado"]));
 		$valor = str_replace(",",".", str_replace(".","", $valor));
 		//tive que usar o replace porque o numero formatado estava dando problema de reconhecer 
-		$valor= (double)$valor;
+		$valor  = (double)$valor;
+		$fuso = new DateTimeZone('America/Sao_Paulo');
 		$data 	= new DateTime();
+		$data->setTimezone($fuso);
 		$data 	= $data->format('y/m/d');
 		$this->id 		 = $id;
 		$this->data 	 = $data;
