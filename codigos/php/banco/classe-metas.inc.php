@@ -71,7 +71,7 @@ class Metas
 			<section class='metas'>
 			<div class='titulo-meta'>
 			<canvas id='graficoAnimacao' width='600' height='400 class='grafico'></canvas>
-				<script type='text/javascript'> desenhaCirculo(300, 200, 100, 'blue',$porcentagem);</script>
+				<!--<script type='text/javascript'> desenhaCirculo(300, 200, 100, 'blue',$porcentagem);</script>-->
 				
 			<h2> $nome </h2>
 			</div>
