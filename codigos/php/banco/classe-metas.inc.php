@@ -81,7 +81,7 @@ class Metas
 					<p>Meta Final: R$ $valorTotal</p>
 				</div>
 				<div>
-					<img src='../../midias/imagem/caneta.svg' alt='imgCaneta'>	
+					<!--<img src='../../midias/imagem/caneta.svg' alt='imgCaneta'>-->	
 				</div>	
 			</div>
 			<span class='btn-cadastre'>

@@ -44,7 +44,7 @@
 				<h2>E-mail: <?php echo "$email";?> </h2> 
 			</div>
 			<div class="edicao-usuario">
-				<a><img src="../../midias/imagem/caneta.svg" alt="imgCaneta"></a>
+				<!--<a><img src="../../midias/imagem/caneta.svg" alt="imgCaneta"></a>-->
 			</div>
 		</div>
 		<div class="container cadastro-meta">	
