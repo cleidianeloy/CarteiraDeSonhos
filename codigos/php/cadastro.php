@@ -11,7 +11,8 @@ require_once "funcoes/funcoes.inc.php";
 	<title>Cadastro</title>
 	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<script type="text/javascript" src= "../javascript/functions"></script> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--carrega o jQuery-->
+	<script type="text/javascript" src= "../javascript/functions.js"></script>
 	
 </head>
 <body>
@@ -29,7 +30,7 @@ require_once "funcoes/funcoes.inc.php";
 			 </div>	
 		</nav>
 </div>
-		<section id="login" class="container modal-container">
+<section id="login" class="container modal-container">
 			<div class="modal">
 				<form action="home.php" method="post">
 					<label>Email:<input type="email" name="email" required="" class="fundo-input"></label>

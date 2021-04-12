@@ -11,7 +11,7 @@ require_once "funcoes/funcoes.inc.php";
 	<title>Home</title>
 	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/style.css">
-	<script type="text/javascript" src= "../javascript/functions"></script> 
+	<script type="text/javascript" src= "../javascript/functions.js"></script> 
 </head>
 <body>
 <div class="menu">
@@ -75,14 +75,6 @@ require_once "funcoes/funcoes.inc.php";
 				<div>
 					<h2 class="tamanho-texto">Ao se cadastrar, definirá valores a suas metas, com autonomia para editar conforme sua necessidade. Acompanhar o quanto está faltando para atingir seus sonhos, despertando  assim, a  motivação em  ver o seu progresso.</h2>
 					<img src="../../midias/imagem/106.png" alt="IMG ">
-				</div>
-				<div>
-
-					<!--<img src="../../midias/imagem/grafico.png" alt="Img Grafico ">			--->
-					<canvas id="graficoAnimacao" width="600" height="400" class="grafico"></canvas>
-					<script type="text/javascript"> animacaoGrafico(300, 200, 100, 'blue',80);</script>
-
-					<h2 class="texto-grafico"> Suas metas será visível por meio de  porcentagem de conclusão, sendo acompanhada  por histórico de datas.<br> Agora você  pode planejar todas as suas metas e deslumbrar com as suas conquistas .</h2><br><br>
 				</div>
 			</div>
 			<span class="btn-cadastre">

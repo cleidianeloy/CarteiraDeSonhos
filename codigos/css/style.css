@@ -104,7 +104,6 @@ body {
 }
 .footer {
     background: #03B6CF9E 0% 0% no-repeat padding-box;
-    height: 526px;
 }
 .footer > div {
     display: flex;
@@ -151,6 +150,8 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
+    color: #fff;
+    font-size: 25px;
 }
 .aberto .modal label {
     color: #fff;
@@ -339,6 +340,7 @@ body {
     border-radius: 50px 50px 0px 0px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .titulo-meta h2 {
     font-size: 52px;
@@ -353,6 +355,7 @@ body {
 }
 .conteuo-meta img {
     margin-top: 27px;
+    display: none;
 }
 .metas .btn-cadastre {
     margin-top: 17px;
@@ -386,6 +389,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
 }
 .historico > div > table {
     width: 100%;
@@ -491,4 +496,20 @@ tbody {
     width: 50%;
     margin: 0 auto;
     padding: 15px;
+}
+.titulo-meta > #graficoAnimacao {
+    display: none;
+}
+.edicao-usuario img {
+    display: none;
+}
+.contato > div > p:nth-child(2) {
+    display: none;
+}
+.historico {
+    margin: 15px 0px;
+}
+.conheca h1 {
+    font-size: 57px;
+    margin-bottom: unset;
 }

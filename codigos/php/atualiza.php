@@ -9,6 +9,8 @@ require_once "funcoes/funcoes.inc.php";
 	<meta charset="utf-8"/>
 	<title>Histórico</title>
 	<link rel="stylesheet" href="../css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--carrega o jQuery-->
+	<script src="../javascript/jquery-maskmoney-master/src/jquery.maskMoney.js"></script> <!--carrega o plugin da máscara. Estou enviando o pacote em anexo-->
 </head>
 <body>
 			<header class="menu">
@@ -46,7 +48,7 @@ require_once "funcoes/funcoes.inc.php";
 						<button type="submit" name="atualizar-meta">Atualizar</button>
 					</div>
 				 </form>
-					
+				 <script src="../javascript/formata-moeda.js"></script>	
 				 <script type="text/javascript">
 				 	function trocaMin(){
 				 		var x = document.getElementById("valor-depositado");
