@@ -7,10 +7,17 @@ require_once "funcoes/funcoes.inc.php";
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8"/>
-	<title>Histórico</title>
+	<title>Atualiza Meta</title>
 	<link rel="stylesheet" href="../css/style.css">
+<<<<<<< HEAD
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--carrega o jQuery-->
 	<script src="../javascript/jquery-maskmoney-master/src/jquery.maskMoney.js"></script> <!--carrega o plugin da máscara. Estou enviando o pacote em anexo-->
+=======
+	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--carrega o jQuery-->
+	<script src="../javascript/jquery-maskmoney-master/src/jquery.maskMoney.js"></script> <!--carrega o plugin da máscara. Estou enviando o pacote em anexo-->
+	<script type="text/javascript" src= "../javascript/functions.js"></script>	
+>>>>>>> 6e17333678943ad6d1fccc26bd52242b2ebba6cf
 </head>
 <body>
 			<header class="menu">
@@ -43,11 +50,12 @@ require_once "funcoes/funcoes.inc.php";
 						<input onclick="trocaMax()" type="radio" name="tipoValor" id="remover" value="remover">
 					</div>
 					<div>
-						<label>Valor</label>
-						<input type="number" id="valor-depositado" name="valor-depositado">
+						<label for="dinheiro" >Objetivo guardado:</label>
+						<input name="valor-depositado" type="text" id="dinheiro" class="dinheiro form-control"required>
 						<button type="submit" name="atualizar-meta">Atualizar</button>
 					</div>
 				 </form>
+<<<<<<< HEAD
 				 <script src="../javascript/formata-moeda.js"></script>	
 				 <script type="text/javascript">
 				 	function trocaMin(){
@@ -61,6 +69,10 @@ require_once "funcoes/funcoes.inc.php";
 				 		x.setAttribute("min", -999999999999999);
 				 	} 
 				 </script>
+=======
+				 <script src="../javascript/formata-moeda.js"></script>		<!--carrega o arquivo de formatação da máscara-->
+					
+>>>>>>> 6e17333678943ad6d1fccc26bd52242b2ebba6cf
 				 <?php
 				 	if(isset($_POST["atualizar-meta"])){
 				 		cadastrarHistorico();

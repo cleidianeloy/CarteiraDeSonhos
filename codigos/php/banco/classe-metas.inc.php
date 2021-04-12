@@ -71,7 +71,7 @@ class Metas
 			<section class='metas'>
 			<div class='titulo-meta'>
 			<canvas id='graficoAnimacao' width='600' height='400 class='grafico'></canvas>
-				<script type='text/javascript'> desenhaCirculo(300, 200, 100, 'blue',$porcentagem);</script>
+				<!--<script type='text/javascript'> desenhaCirculo(300, 200, 100, 'blue',$porcentagem);</script>-->
 				
 			<h2> $nome </h2>
 			</div>
@@ -81,11 +81,11 @@ class Metas
 					<p>Meta Final: R$ $valorTotal</p>
 				</div>
 				<div>
-					<img src='../../midias/imagem/caneta.svg' alt='imgCaneta'>	
+					<!--<img src='../../midias/imagem/caneta.svg' alt='imgCaneta'>-->	
 				</div>	
 			</div>
 			<span class='btn-cadastre'>
-				<button class='historico' name='historico'><a href='historico.php?meta=$id'>História</a></button>
+				<button class='historico' name='historico'><a href='historico.php?meta=$id'>Histórico</a></button>
 				<button class='apagar' name='apagar'><a href='paginaUsuario.php?apagar=$id'>Apagar</a></button>
 				<button class='atualizar' name='atualizar'><a href='atualiza.php?atualizaValor=$id'>Atualizar</a></button>
 			</span>

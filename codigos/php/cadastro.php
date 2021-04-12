@@ -46,7 +46,7 @@ require_once "funcoes/funcoes.inc.php";
 				
 				<div class="cadastro-esqueci">
 					<a href="cadastro.php">Clique aqui caso não tenha cadastro</a><br>
-					<a href="esqueciSenha.php">	Esqueci minha senha</a>
+					<!--<a href="esqueciSenha.php">	Esqueci minha senha</a> -->
 				</div>
 			</div>
 		</section>
