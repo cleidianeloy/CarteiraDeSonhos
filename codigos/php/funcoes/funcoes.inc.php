@@ -49,7 +49,7 @@ $banco->criarTabelas($conexao);
 $usuario  = new Usuario();
 		$usuario->receberDadosFormulario($conexao);
 		$usuario->cadastrar($conexao, $banco->nomeDaTabela1);
-		echo"<p> Dados do usuario cadastrado com sucesso no banco de dados.</p>";
+		echo"<p> Dados do usuario cadastrado com sucesso.</p>";
 	$banco->desconectar($conexao);
 }
 
