@@ -126,7 +126,13 @@ function cadastrarMeta(){
 	$banco->criarTabelas($conexao);
 	$meta  = new Metas();
 	$meta->receberDadosFormulario($conexao);
-	$meta->cadastrar($conexao, $banco->nomeDaTabela2);
+	$teste =$meta->cadastrar($conexao, $banco->nomeDaTabela2);
+		if($teste){
+			echo("<script> alert('Meta cadastrada com sucesso')</script>");	
+		}else{
+			echo("<script> alert('Desculpe aconteceu um erro, lembre-se não é possivel cadastrar duas metas com o mesmo nome')</script>");
+		}
+		
 	$banco->desconectar($conexao);
 }
 function mostraMetas(){

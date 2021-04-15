@@ -79,8 +79,8 @@ require_once "funcoes/funcoes.inc.php";
 				<h1>Contato</h1>
 				<div class="contato">
 					<div>
-						<p>Email:  email@email.com</p>
-						<p>Telefone:   (00) 0000-0000 </p>
+						<p>Email:  contato@carteiradossonhos.com</p>
+						<p>Telefone:   (48) 3300-0000 </p>
 					</div>
 					<div>
 						<img src="../../midias/imagem/icone-instagram.svg" alt="icone-instagram">

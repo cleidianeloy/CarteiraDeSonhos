@@ -29,14 +29,26 @@ class Metas
 
 	function cadastrar($conexao, $nomeDaTabela2)
 	{
-		$sql = "INSERT $nomeDaTabela2 VALUES(
-		null,
-		'$this->nomeMeta',
-		'$this->usuario',
-		'$this->valorTotal',
-		'$this->valorAtual')";
-
+		$sql = "SELECT nomeMeta 
+				FROM  metas 
+				WHERE nomeMeta = '$this->nomeMeta' 
+				AND usuario = '$this->usuario'";
 		$resultado = $conexao->query($sql) or exit($conexao->error);
+		if($conexao->affected_rows != 0){
+			
+			return false;
+
+		}else
+		{
+			$sql = "INSERT $nomeDaTabela2 VALUES(
+			null,
+			'$this->nomeMeta',
+			'$this->usuario',
+			'$this->valorTotal',
+			'$this->valorAtual')";
+			$resultado = $conexao->query($sql) or exit($conexao->error);			
+			return true;
+		}
 	}
 	function apagarMeta($conexao, $nomeDaTabela2){
 		$idMeta = trim($conexao->escape_string($_GET['apagar']));
