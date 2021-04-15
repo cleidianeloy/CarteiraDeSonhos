@@ -1,4 +1,5 @@
-<?php session_cache_expire(60);
+<?php 
+session_cache_expire(60);
 session_start();
 
 require_once "funcoes/funcoes.inc.php"; 
@@ -9,15 +10,11 @@ require_once "funcoes/funcoes.inc.php";
 	<meta charset="utf-8"/>
 	<title>Atualiza Meta</title>
 	<link rel="stylesheet" href="../css/style.css">
-<<<<<<< HEAD
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--carrega o jQuery-->
-	<script src="../javascript/jquery-maskmoney-master/src/jquery.maskMoney.js"></script> <!--carrega o plugin da máscara. Estou enviando o pacote em anexo-->
-=======
 	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--carrega o jQuery-->
 	<script src="../javascript/jquery-maskmoney-master/src/jquery.maskMoney.js"></script> <!--carrega o plugin da máscara. Estou enviando o pacote em anexo-->
 	<script type="text/javascript" src= "../javascript/functions.js"></script>	
->>>>>>> 6e17333678943ad6d1fccc26bd52242b2ebba6cf
+
 </head>
 <body>
 			<header class="menu">
@@ -40,7 +37,7 @@ require_once "funcoes/funcoes.inc.php";
 		</header>
 
 		<section class="atualizar">
-		<p>Para alterar o valor guardado cliquei em Adicionar ou Remover,Para adicionar basta clicar em adicionar e escreve o valor no campo abaixo do valor, para remover clique em remover e escreve o valor abaixo do campo com o sinal de negativo.</p>
+		<p>Para alterar o valor guardado cliquei no campo Adicionar ou Remover, Para adicionar basta clicar em Adicionar e escreve o valor no campo abaixo do Objetivo guardado, para remover clique em remover e escreve o valor abaixo do campo Objetivo guardado.</p>
 			<div class="atualizar-valores"> 
 				 <form method="POST">
 					<div>
@@ -55,7 +52,6 @@ require_once "funcoes/funcoes.inc.php";
 						<button type="submit" name="atualizar-meta">Atualizar</button>
 					</div>
 				 </form>
-<<<<<<< HEAD
 				 <script src="../javascript/formata-moeda.js"></script>	
 				 <script type="text/javascript">
 				 	function trocaMin(){
@@ -69,10 +65,7 @@ require_once "funcoes/funcoes.inc.php";
 				 		x.setAttribute("min", -999999999999999);
 				 	} 
 				 </script>
-=======
 				 <script src="../javascript/formata-moeda.js"></script>		<!--carrega o arquivo de formatação da máscara-->
-					
->>>>>>> 6e17333678943ad6d1fccc26bd52242b2ebba6cf
 				 <?php
 				 	if(isset($_POST["atualizar-meta"])){
 				 		cadastrarHistorico();
@@ -83,7 +76,7 @@ require_once "funcoes/funcoes.inc.php";
 
 		<section class="footer">
 			<div  class="container">
-				<h3>Contato</h3>
+				<h1>Contato</h1>
 				<div class="contato">
 					<div>
 						<p>Email:  email@email.com</p>

@@ -85,7 +85,7 @@ class Metas
 				</div>	
 			</div>
 			<span class='btn-cadastre'>
-				<button class='historico' name='historico'><a href='historico.php?meta=$id'>Histórico</a></button>
+				<button name='historico'><a href='historico.php?meta=$id'>Histórico</a></button>
 				<button class='apagar' name='apagar'><a href='paginaUsuario.php?apagar=$id'>Apagar</a></button>
 				<button class='atualizar' name='atualizar'><a href='atualiza.php?atualizaValor=$id'>Atualizar</a></button>
 			</span>

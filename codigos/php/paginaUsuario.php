@@ -64,21 +64,25 @@
 					<button type="submit" name="cadastrar-meta">Salvar Meta</button>
 				</form>
 				 <script src="../javascript/formata-moeda.js"></script>		<!--carrega o arquivo de formatação da máscara-->
-				<?php
+				<p>
+					<?php
 						if(isset($_POST["cadastrar-meta"])){
 							//$nomeMeta = $_POST["nome-meta"];
 							//$valor= $_POST["valor-meta"];
 							cadastrarMeta();
 							} 
-				?>			 
+					?>	
+				</p>		 
 			</div>
 		</div>
 		</section>	
 		<div class="section-metas"> 
-		<?php ob_start(); 
-			mostraMetas();
-			  apagarMeta();
-			  ob_end_flush();?>
+			<?php 
+				ob_start(); 
+				mostraMetas();
+				apagarMeta();
+				ob_end_flush();
+			?>
 			  
 		</div>	  
 		<script type="text/javascript"></script>

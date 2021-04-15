@@ -37,11 +37,12 @@ require_once "funcoes/funcoes.inc.php";
 					<button type="submit" name="login">Login</button>
 
 				</form>
+				<p>
 				<?php
 					if(isset($_POST["login"])){
 				 		login();
 				}?>
-				
+				</p> 
 				<div class="cadastro-esqueci">
 					<a href="cadastro.php">Clique aqui caso não tenha cadastro</a><br>
 					<!--<a href="esqueciSenha.php">	Esqueci minha senha</a> -->
@@ -88,7 +89,7 @@ require_once "funcoes/funcoes.inc.php";
 				<h1>Contato</h1>
 				<div class="contato">
 					<div>
-						<p><span>Email:</span>  email@email.com</p>
+						<p><span>Email:</span>  contato@carteiradossonhos.com</p>
 						<p><span>Telefone:</span>   (00) 0000-0000 </p>
 					</div>
 					<div>

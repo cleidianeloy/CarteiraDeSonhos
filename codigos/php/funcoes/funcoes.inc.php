@@ -28,7 +28,7 @@ $usuario  = new Usuario();
 			header("Location: paginaUsuario.php");
 		}else
 		{
-			echo("algo deu errado, tente de novo<br>");
+			echo("Algo deu errado, tente novamente");
 		}
 	$banco->desconectar($conexao); //desconecta do banco
 }
@@ -124,11 +124,9 @@ function cadastrarMeta(){
 	$banco->abrirBanco($conexao);
 	$banco->definirCharset($conexao);
 	$banco->criarTabelas($conexao);
-
 	$meta  = new Metas();
-		$meta->receberDadosFormulario($conexao);
-		$meta->cadastrar($conexao, $banco->nomeDaTabela2);
-		echo("<p> Dados cadastrado com sucesso no banco de dados.</p>");
+	$meta->receberDadosFormulario($conexao);
+	$meta->cadastrar($conexao, $banco->nomeDaTabela2);
 	$banco->desconectar($conexao);
 }
 function mostraMetas(){

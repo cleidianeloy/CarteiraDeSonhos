@@ -115,7 +115,6 @@ body {
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    margin-top: 89px;
 }
 .footer > .container > h1 {
     font-weight: bold;
@@ -124,7 +123,6 @@ body {
 .contato > div > p {
     font-size: 35px;
     display: flex;
-    margin-bottom: 85px;
 }
 .contato > div > p > span {
     font-weight: bold;
@@ -188,6 +186,7 @@ body {
 .cadastro-esqueci > a {
     font-size: 30px;
     text-decoration: unset !important;
+    padding: 0px 10px;
 }
 /*CSS GRAFICO HOME*/
 #graficoAnimacao {
@@ -455,6 +454,7 @@ tbody {
 .cadastro-meta .edicao-meta.aberto {
     display: flex;
     width: 50%;
+    flex-direction: column;
 }
 .edicao-meta.aberto > form {
     display: flex;
@@ -507,9 +507,19 @@ tbody {
     display: none;
 }
 .historico {
-    margin: 15px 0px;
+    margin: 15px 0px 127px 0px;
 }
 .conheca h1 {
     font-size: 57px;
     margin-bottom: unset;
+}
+.contato > div:nth-child(2) > img {
+    height: 70px;
+}
+.cadastro-esqueci:hover {
+    background-color: #edfd3e;
+    border-radius: 50px;
+}
+.cadastro-esqueci > a:hover {
+    color: #000;
 }

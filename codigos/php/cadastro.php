@@ -11,11 +11,11 @@ require_once "funcoes/funcoes.inc.php";
 	<title>Cadastro</title>
 	<link rel="shortcut icon" href="../../midias/imagem/logo.svg" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--carrega o jQuery-->
 	<script type="text/javascript" src= "../javascript/functions.js"></script>
 	
 </head>
 <body>
+
 <div class="menu">
 			<nav style="width: 100%;">
 			 <div id="menu" class="container">
@@ -23,14 +23,14 @@ require_once "funcoes/funcoes.inc.php";
 					<a href="home.php"><img  src="../../midias/imagem/logo.svg" alt="logo"></a>
 				</div>
 				<div class="links">
-					<a class="topico" href="#conheca">Conheça</a>
-					<a class="topico" href="#contato">Contato</a> 
+					<a class="topico" href="home.php#conheca">Conheça</a>
+					<a class="topico" href="home.php#contato">Contato</a> 
 					<a class="topico login" href="#login">Login/Cadastre-se</a>
 					</div> 
 			 </div>	
 		</nav>
 </div>
-<section id="login" class="container modal-container">
+		<section id="login" class="container modal-container">
 			<div class="modal">
 				<form action="home.php" method="post">
 					<label>Email:<input type="email" name="email" required="" class="fundo-input"></label>
@@ -50,6 +50,7 @@ require_once "funcoes/funcoes.inc.php";
 				</div>
 			</div>
 		</section>
+
 <section class="cadastro">
 	<div class="formulario">
 		<div>
